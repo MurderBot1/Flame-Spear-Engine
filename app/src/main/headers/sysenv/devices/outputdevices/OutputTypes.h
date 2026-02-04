@@ -1,7 +1,7 @@
 #ifndef OutputTypes_H
 #define OutputTypes_H
 
-namespace FlameSpearEngine::System::Devices {
+namespace FSE::System::Devices {
     enum OutputTypes {
         Speaker,
         Display

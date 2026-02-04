@@ -7,7 +7,7 @@
 #include <memory>
 #include <vector>
 
-namespace FlameSpearEngine::UI::OSWindows {
+namespace FSE::UI::OSWindows {
     class BaseWindow {
         public: // Constructor
             BaseWindow(std::shared_ptr<ApplicationConstants> applicationConstants);

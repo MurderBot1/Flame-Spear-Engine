@@ -6,7 +6,7 @@
 
 #include <vector>
 
-namespace FlameSpearEngine::System {
+namespace FSE::System {
     class SysEnv {
         public: 
             static std::vector<Devices::InputDevice>& getInputDevices(); 

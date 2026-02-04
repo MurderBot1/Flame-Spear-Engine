@@ -1,6 +1,6 @@
 #include "ui/Window.h"
 
-FlameSpearEngine::UI::Window::Window(std::shared_ptr<ApplicationConstants> applicationConstants)
+FSE::UI::Window::Window(std::shared_ptr<ApplicationConstants> applicationConstants)
     #if defined(_WIN32) || defined(_WIN64)
         : WindowsWindow(applicationConstants) {
     #elif defined(__linux__)

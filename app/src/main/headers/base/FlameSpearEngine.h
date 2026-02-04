@@ -1,10 +1,10 @@
-#ifndef FlameSpearEngine_H
-#define FlameSpearEngine_H
+#ifndef FSE_H
+#define FSE_H
 
 #include "base/Application.h"
 
-namespace FlameSpearEngine {
-    void startGame(std::shared_ptr<FlameSpearEngine::Application> app);
+namespace FSE {
+    void startGame(std::shared_ptr<FSE::Application> app);
 }
 
 #endif

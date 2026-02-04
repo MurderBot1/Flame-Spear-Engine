@@ -6,12 +6,12 @@
 #include <chrono>
 #include <thread>
 
-FlameSpearEngine::Application::Application(std::shared_ptr<ApplicationConstants> constants)
+FSE::Application::Application(std::shared_ptr<ApplicationConstants> constants)
         : displayWindow(constants) {
     applicationConstants = constants;
 }
 
-void FlameSpearEngine::Application::run() {
+void FSE::Application::run() {
     int i = 0;
     while (i < 5) {
         std::cout << "running\n";

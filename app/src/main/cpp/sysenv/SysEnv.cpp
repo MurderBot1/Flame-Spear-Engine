@@ -1,13 +1,13 @@
 #include "sysenv/SysEnv.h"
 
-std::vector<FlameSpearEngine::System::Devices::InputDevice>& FlameSpearEngine::System::SysEnv::getInputDevices() {
+std::vector<FSE::System::Devices::InputDevice>& FSE::System::SysEnv::getInputDevices() {
     return inputDevices;
 }
 
-std::vector<FlameSpearEngine::System::Devices::OutputDevice>& FlameSpearEngine::System::SysEnv::getOutputDevices() {
+std::vector<FSE::System::Devices::OutputDevice>& FSE::System::SysEnv::getOutputDevices() {
     return outputDevices;
 }
 
-void FlameSpearEngine::System::SysEnv::updateDevices() {
+void FSE::System::SysEnv::updateDevices() {
     
 }

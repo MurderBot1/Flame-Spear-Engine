@@ -5,7 +5,7 @@
 
 #include <string>
 
-namespace FlameSpearEngine {
+namespace FSE {
     struct ApplicationConstants {
         public:
             ApplicationConstants(std::string_view name, Helpers::Screen::ConstantScreenSize startingScreenSize);

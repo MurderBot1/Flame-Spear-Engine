@@ -9,7 +9,7 @@
     #include "ui/oswindows/mac/MacWindows.h"
 #endif
 
-namespace FlameSpearEngine::UI {
+namespace FSE::UI {
     class Window 
         #if defined(_WIN32) || defined(_WIN64)
             : public OSWindows::WindowsWindow {

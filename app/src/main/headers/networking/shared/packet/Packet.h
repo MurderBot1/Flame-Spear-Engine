@@ -2,7 +2,7 @@
 #define Packet_H
 #include <array>
 
-namespace FlameSpearEngine::Networking::Packet {
+namespace FSE::Networking::Packet {
     struct Packet128 {
         Packet128(int ID, std::array<char, 128> data);
 

@@ -5,7 +5,7 @@
 
 #include "ui/oswindows/OSWindows.h"
 
-namespace FlameSpearEngine::UI::OSWindows {
+namespace FSE::UI::OSWindows {
     class MacWindow : public BaseWindow {
         public: // Constructor
             MacWindow(std::shared_ptr<ApplicationConstants> applicationConstants);

@@ -5,7 +5,7 @@
 
 #include "ui/oswindows/OSWindows.h"
 
-namespace FlameSpearEngine::UI::OSWindows {
+namespace FSE::UI::OSWindows {
     class WindowsWindow : public BaseWindow {
         public: // Constructor
             WindowsWindow(std::shared_ptr<ApplicationConstants> applicationConstants);

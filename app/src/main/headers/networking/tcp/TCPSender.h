@@ -1,7 +1,7 @@
 #ifndef TCP_H
 #define TCP_H
 
-namespace FlameSpearEngine::Networking::TCP {
+namespace FSE::Networking::TCP {
     class TCPSender {
         
     };

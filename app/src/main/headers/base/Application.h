@@ -3,7 +3,7 @@
 
 #include "ui/Window.h"
 
-namespace FlameSpearEngine {
+namespace FSE {
     class Application {
         public:
             Application(std::shared_ptr<ApplicationConstants> constants);

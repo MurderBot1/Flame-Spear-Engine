@@ -5,10 +5,10 @@
 
 #include <memory>
 
-// extern std::shared_ptr<FlameSpearEngine::Application> app;
+// extern std::shared_ptr<FSE::Application> app;
 
 int main () {
-    const std::shared_ptr<FlameSpearEngine::ApplicationConstants> appConstants = std::make_shared<FlameSpearEngine::ApplicationConstants>(FlameSpearEngine::ApplicationConstants("", FlameSpearEngine::Helpers::Screen::ConstantScreenSize(0, 0)));
-    const std::shared_ptr<FlameSpearEngine::Application> app = std::make_shared<FlameSpearEngine::Application>(FlameSpearEngine::Application(appConstants));
-    FlameSpearEngine::startGame(app);
+    const std::shared_ptr<FSE::ApplicationConstants> appConstants = std::make_shared<FSE::ApplicationConstants>(FSE::ApplicationConstants("", FSE::Helpers::Screen::ConstantScreenSize(0, 0)));
+    const std::shared_ptr<FSE::Application> app = std::make_shared<FSE::Application>(FSE::Application(appConstants));
+    FSE::startGame(app);
 }

@@ -1,7 +1,7 @@
 #ifndef PacketBuilder_H
 #define PacketBuilder_H
 
-namespace FlameSpearEngine::Networking::Packet {
+namespace FSE::Networking::Packet {
     class PacketBuilder {
         public:
             PacketBuilder();

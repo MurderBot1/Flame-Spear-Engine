@@ -1,7 +1,7 @@
 #ifndef InputTypes_H
 #define InputTypes_H
 
-namespace FlameSpearEngine::System::Devices {
+namespace FSE::System::Devices {
     enum InputTypes {
         Mouse,
         Keyboard,

@@ -2,24 +2,24 @@
 
 #include "ui/oswindows/windows/WindowsWindows.h"
 
-FlameSpearEngine::UI::OSWindows::WindowsWindow::WindowsWindow(std::shared_ptr<ApplicationConstants> applicationConstants)
+FSE::UI::OSWindows::WindowsWindow::WindowsWindow(std::shared_ptr<ApplicationConstants> applicationConstants)
         : BaseWindow(applicationConstants) {
 
 }
 
-void FlameSpearEngine::UI::OSWindows::WindowsWindow::updateBufferSize() {
+void FSE::UI::OSWindows::WindowsWindow::updateBufferSize() {
 
 }
 
-void FlameSpearEngine::UI::OSWindows::WindowsWindow::setPixel(int rgba, int index) {
+void FSE::UI::OSWindows::WindowsWindow::setPixel(int rgba, int index) {
 
 }
 
-void FlameSpearEngine::UI::OSWindows::WindowsWindow::setPixels(std::vector<int> newPixels) {
+void FSE::UI::OSWindows::WindowsWindow::setPixels(std::vector<int> newPixels) {
 
 }
 
-void FlameSpearEngine::UI::OSWindows::WindowsWindow::display() {
+void FSE::UI::OSWindows::WindowsWindow::display() {
 
 }
 

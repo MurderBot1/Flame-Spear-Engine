@@ -3,7 +3,7 @@
 
 #include "sysenv/devices/outputdevices/OutputTypes.h"
 
-namespace FlameSpearEngine::System::Devices {
+namespace FSE::System::Devices {
     class OutputDevice {
         public:
         private:

@@ -1,7 +1,7 @@
 #ifndef Helpers_H
 #define Helpers_H
 
-namespace FlameSpearEngine::Helpers {
+namespace FSE::Helpers {
     namespace Screen {
         struct ConstantScreenSize {
             public:
