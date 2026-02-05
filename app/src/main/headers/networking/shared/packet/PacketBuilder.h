@@ -20,6 +20,7 @@ namespace FSE::Networking::Packet {
             void withFloat(float var);
             void withInt(int var);
             void withString(std::string var);
+            T construct();
         private:
             T packet;
             size_t sizeRemainingInBytes;

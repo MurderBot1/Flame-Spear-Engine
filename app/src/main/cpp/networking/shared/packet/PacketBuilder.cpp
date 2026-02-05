@@ -88,3 +88,10 @@ void FSE::Networking::Packet::PacketBuilder<T>::withString(std::string var) {
 
     sizeRemainingInBytes -= var.size();
 }
+
+template <typename T>
+T FSE::Networking::Packet::PacketBuilder<T>::construct()
+{
+    packet.constructHash();
+    return packet;
+}
