@@ -2,15 +2,17 @@
 #define Packet_H
 
 #include <array>
+#include <cstddef>
 
 #define PACKET_128_SIZE 128
 #define PACKET_256_SIZE 256
 #define PACKET_512_SIZE 512
+#define PACKET_1024_SIZE 512
 
 namespace FSE::Networking::Packet {
     struct PacketBaseTag {};
 
-    template<int SIZE>
+    template<size_t SIZE>
     struct PacketBase : PacketBaseTag {
         PacketBase(int packetID, std::array<char, SIZE> data);
 
@@ -28,6 +30,10 @@ namespace FSE::Networking::Packet {
 
     struct Packet512 : PacketBase<PACKET_512_SIZE> {
         Packet512(int packetID, std::array<char, PACKET_512_SIZE> data);
+    };
+
+    struct Packet1024 : PacketBase<PACKET_1024_SIZE> {
+        Packet1024(int packetID, std::array<char, PACKET_1024_SIZE> data);
     };
 }
 

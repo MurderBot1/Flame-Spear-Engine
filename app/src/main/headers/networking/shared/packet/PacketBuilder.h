@@ -4,6 +4,7 @@
 #include "networking/shared/packet/Packet.h"
 
 #include <type_traits>
+#include <string>
 
 namespace FSE::Networking::Packet {
     template<typename T>
@@ -12,9 +13,17 @@ namespace FSE::Networking::Packet {
                   "Built type must inherit from Base");
         public:
             PacketBuilder(int ID);
+        public:
+            void withBool(bool var);
+            void withChar(char var);
+            void withDouble(double var);
+            void withFloat(float var);
+            void withInt(int var);
+            void withString(std::string var);
         private:
             T packet;
-            int sizeRemaining;
+            size_t sizeRemainingInBytes;
+            size_t totalSize;
     };
 }
 
