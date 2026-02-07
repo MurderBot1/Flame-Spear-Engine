@@ -1,97 +1,93 @@
 #include "networking/shared/packet/PacketBuilder.h"
 
-template<typename T>
-FSE::Networking::Packet::PacketBuilder<T>::PacketBuilder(int ID)
-    : packet(ID, {}) {
-    sizeRemainingInBytes = packet.data.size();
-    totalSize = packet.data.size();
-}
+namespace FSE::Networking::Packet {
 
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withBool(bool var) {
-    if (sizeRemainingInBytes < 1) {
-        return;
+    template<typename T>
+    PacketBuilder<T>::PacketBuilder(int ID)
+        : packet(ID), cursor(0) {}
+
+    template<typename T>
+    void PacketBuilder<T>::ensureSpace(size_t bytes) {
+        if (cursor + bytes > packet.data.size()) {
+            throw std::runtime_error("PacketBuilder overflow");
+        }
     }
 
-    packet.data[totalSize - sizeRemainingInBytes] = (var) 
-            ? 0x01 
-            : 0x00;
-
-    sizeRemainingInBytes--;
-}
-
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withChar(char var) {
-    if (sizeRemainingInBytes < 1) {
-        return;
+    template<typename T>
+    void PacketBuilder<T>::writeByte(unsigned char b) {
+        ensureSpace(1);
+        packet.data[cursor++] = static_cast<char>(b);
     }
 
-    packet.data[totalSize - sizeRemainingInBytes] = var;
-    
-    sizeRemainingInBytes--;
-}
-
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withDouble(double var) {
-    if (sizeRemainingInBytes < 8) {
-        return;
+    template<typename T>
+    void PacketBuilder<T>::writeBytes(const unsigned char* src, size_t count) {
+        ensureSpace(count);
+        for (size_t i = 0; i < count; ++i)
+            packet.data[cursor++] = static_cast<char>(src[i]);
     }
 
-    unsigned char* bytePtr = reinterpret_cast<unsigned char*>(&var);
+    template<typename T>
+    template<typename U>
+    void PacketBuilder<T>::writeBigEndian(U value) {
+        static_assert(std::is_integral<U>::value, "writeBigEndian requires integral type");
+        constexpr size_t N = sizeof(U);
+        ensureSpace(N);
 
-    for (size_t i = 0; i < sizeof(double); ++i) {
-        packet.data[totalSize - sizeRemainingInBytes + i] = bytePtr[i];
+        for (int i = N - 1; i >= 0; --i)
+            writeByte((value >> (i * 8)) & 0xFF);
     }
 
-    sizeRemainingInBytes -= sizeof(double);
-}
-
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withFloat(float var) {
-    if (sizeRemainingInBytes < 4) {
-        return;
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withBool(bool var) {
+        writeByte(var ? 1 : 0);
+        return *this;
     }
 
-    unsigned char* bytePtr = reinterpret_cast<unsigned char*>(&var);
-
-    for (size_t i = 0; i < sizeof(float); ++i) {
-        packet.data[totalSize - sizeRemainingInBytes + i] = bytePtr[i];
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withChar(char var) {
+        writeByte(static_cast<unsigned char>(var));
+        return *this;
     }
 
-    sizeRemainingInBytes -= sizeof(float);
-}
-
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withInt(int var) {
-    if (sizeRemainingInBytes < 4) {
-        return;
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withInt(int32_t var) {
+        writeBigEndian(var);
+        return *this;
     }
 
-    unsigned char* bytePtr = reinterpret_cast<unsigned char*>(&var);
-
-    for (size_t i = 0; i < sizeof(int); ++i) {
-        packet.data[totalSize - sizeRemainingInBytes + i] = bytePtr[i];
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withFloat(float var) {
+        uint32_t bits;
+        std::memcpy(&bits, &var, sizeof(float));
+        writeBigEndian(bits);
+        return *this;
     }
 
-    sizeRemainingInBytes -= sizeof(int);
-}
-
-template <typename T>
-void FSE::Networking::Packet::PacketBuilder<T>::withString(std::string var) {
-    if (sizeRemainingInBytes < var.size()) {
-        return;
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withDouble(double var) {
+        uint64_t bits;
+        std::memcpy(&bits, &var, sizeof(double));
+        writeBigEndian(bits);
+        return *this;
     }
 
-    for (size_t i = 0; i < var.size(); ++i) {
-        packet.data[totalSize - sizeRemainingInBytes + i] = var[i];
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withString(const std::string& var) {
+        withInt(static_cast<int32_t>(var.size()));
+        writeBytes(reinterpret_cast<const unsigned char*>(var.data()), var.size());
+        return *this;
     }
 
-    sizeRemainingInBytes -= var.size();
-}
+    template<typename T>
+    PacketBuilder<T>& PacketBuilder<T>::withRawBytes(const std::vector<unsigned char>& var) {
+        writeBytes(var.data(), var.size());
+        return *this;
+    }
 
-template <typename T>
-T FSE::Networking::Packet::PacketBuilder<T>::construct()
-{
-    packet.constructHash();
-    return packet;
+    template<typename T>
+    T PacketBuilder<T>::construct() {
+        packet.constructHash();
+        return packet;
+    }
+
 }

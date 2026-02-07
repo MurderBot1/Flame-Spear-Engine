@@ -5,27 +5,42 @@
 
 #include <type_traits>
 #include <string>
+#include <vector>
+#include <cstring>
+#include <stdexcept>
 
 namespace FSE::Networking::Packet {
+
     template<typename T>
     class PacketBuilder {
         static_assert(std::is_base_of<PacketBaseTag, T>::value,
-                  "Built type must inherit from Base");
-        public:
-            PacketBuilder(int ID);
-        public:
-            void withBool(bool var);
-            void withChar(char var);
-            void withDouble(double var);
-            void withFloat(float var);
-            void withInt(int var);
-            void withString(std::string var);
-            T construct();
-        private:
-            T packet;
-            size_t sizeRemainingInBytes;
-            size_t totalSize;
+                      "PacketBuilder<T> requires T to inherit from PacketBaseTag");
+
+    public:
+        explicit PacketBuilder(int ID);
+
+        PacketBuilder& withBool(bool var);
+        PacketBuilder& withChar(char var);
+        PacketBuilder& withInt(int32_t var);
+        PacketBuilder& withFloat(float var);
+        PacketBuilder& withDouble(double var);
+        PacketBuilder& withString(const std::string& var);
+        PacketBuilder& withRawBytes(const std::vector<unsigned char>& var);
+
+        T construct();
+
+    private:
+        T packet;
+        size_t cursor;
+
+        void ensureSpace(size_t bytes);
+        void writeByte(unsigned char b);
+        void writeBytes(const unsigned char* src, size_t count);
+
+        template<typename U>
+        void writeBigEndian(U value);
     };
-}
+
+} 
 
 #endif
