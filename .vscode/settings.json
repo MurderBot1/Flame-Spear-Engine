@@ -60,5 +60,5 @@
         "xutility": "cpp",
         "array": "cpp"
     },
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
