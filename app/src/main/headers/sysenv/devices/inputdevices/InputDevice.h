@@ -3,7 +3,7 @@
 
 #include "sysenv/devices/inputdevices/InputTypes.h"
 
-namespace FSE::System::Devices {
+namespace FSE::System::Devices::Input {
     class InputDevice {
         public:
         private:
