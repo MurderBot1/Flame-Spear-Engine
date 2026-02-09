@@ -1,28 +1,40 @@
 #ifndef Packet_H
 #define Packet_H
+
 #include <array>
+#include <cstddef>
+#include <cstdint>
+
+#define PACKET_32_SIZE   32
+#define PACKET_64_SIZE   64
+#define PACKET_128_SIZE  128
+#define PACKET_256_SIZE  256
+#define PACKET_512_SIZE  512
+#define PACKET_1024_SIZE 1024
 
 namespace FSE::Networking::Packet {
-    struct Packet128 {
-        Packet128(int ID, std::array<char, 128> data);
+
+    struct PacketBaseTag {};
+
+    template<size_t SIZE>
+    struct PacketBase : PacketBaseTag {
+        explicit PacketBase(int packetID);
+
+        void constructHash();
+        uint64_t getHash() const;
 
         int packetID;
-        std::array<char, 128> data;
+        uint64_t hash;
+        std::array<char, SIZE> data;
     };
 
-    struct Packet256 {
-        Packet256(int ID, std::array<char, 256> data);
+    struct Packet32   : PacketBase<PACKET_32_SIZE>   { explicit Packet32(int id); };
+    struct Packet64   : PacketBase<PACKET_64_SIZE>   { explicit Packet64(int id); };
+    struct Packet128  : PacketBase<PACKET_128_SIZE>  { explicit Packet128(int id); };
+    struct Packet256  : PacketBase<PACKET_256_SIZE>  { explicit Packet256(int id); };
+    struct Packet512  : PacketBase<PACKET_512_SIZE>  { explicit Packet512(int id); };
+    struct Packet1024 : PacketBase<PACKET_1024_SIZE> { explicit Packet1024(int id); };
 
-        int packetID;
-        std::array<char, 256> data;
-    };
-
-    struct Packet512 {
-        Packet512(int ID, std::array<char, 512> data);
-
-        int packetID;
-        std::array<char, 512> data;
-    };
 }
 
 #endif
