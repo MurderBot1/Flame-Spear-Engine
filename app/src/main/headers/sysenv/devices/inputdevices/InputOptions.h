@@ -42,47 +42,31 @@ namespace FSE::System::Devices::Input {
         KEYBOARD_9,
 
         // Controller
-        CONTROLLER_A,
-        CONTROLLER_B,
-        CONTROLLER_X,
-        CONTROLLER_Y,
-        CONTROLLER_RIGHT_BUMPER,
-        CONTROLLER_LEFT_BUMPER,
-        CONTROLLER_RIGHT_TRIGGER,
-        CONTROLLER_LEFT_TRIGGER,
-        CONTROLLER_POV_UP,
-        CONTROLLER_POV_DOWN,
-        CONTROLLER_POV_LEFT,
-        CONTROLLER_POV_RIGHT,
 
         // Joystick
 
-
         // Mouse
-        MOUSE_RIGHT,
-        MOUSE_MIDDLE,
-        MOUSE_LEFT,
-        MOUSE_SIDE_1,
-        MOUSE_SIDE_2,
     };
 
     enum class FloatInputs {
         // Keyboard
 
-
         // Controller
-        CONTROLLER_RIGHT_X,
-        CONTROLLER_RIGHT_Y,
-        CONTROLLER_LEFT_X,
-        CONTROLLER_LEFT_Y,
 
         // Joystick
-        JOYSTICK_X,
-        JOYSTICK_Y,
 
         // Mouse
-        MOUSE_X,
-        MOUSE_Y,
+
+    };
+
+    enum class VectorInputs {
+        // Keyboard
+
+        // Controller
+
+        // Joystick
+
+        // Mouse
     };
 }
 
