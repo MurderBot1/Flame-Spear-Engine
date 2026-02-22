@@ -2,8 +2,7 @@
 
 #include "ui/oswindows/mac/MacWindows.h"
 
-FSE::UI::OSWindows::MacWindow::MacWindow(std::shared_ptr<ApplicationConstants> applicationConstants)
-        : BaseWindow(applicationConstants) {
+FSE::UI::OSWindows::MacWindow::MacWindow() {
     
 }
 

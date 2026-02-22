@@ -2,8 +2,7 @@
 
 #include "ui/oswindows/linux/LinuxWindows.h"
 
-FSE::UI::OSWindows::LinuxWindow::LinuxWindow(std::shared_ptr<ApplicationConstants> applicationConstants)
-        : BaseWindow(applicationConstants) {
+FSE::UI::OSWindows::LinuxWindow::LinuxWindow() {
 
 }
 

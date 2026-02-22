@@ -1,7 +1,6 @@
 #ifndef OSWindows_H
 #define OSWindows_H
 
-#include "base/ApplicationConstants.h"
 #include "helpers/Helpers.h"
 
 #include <memory>
@@ -10,7 +9,7 @@
 namespace FSE::UI::OSWindows {
     class BaseWindow {
         public: // Constructor
-            BaseWindow(std::shared_ptr<ApplicationConstants> applicationConstants);
+            BaseWindow();
         public: // Getter / Setters
             Helpers::Screen::ScreenSize getScreenSize() { return screenSize; }
         public:

@@ -5,6 +5,7 @@ namespace FSE::Helpers {
     namespace Screen {
         struct ConstantScreenSize {
             public:
+                constexpr ConstantScreenSize() : x(0), y(0) {}
                 constexpr ConstantScreenSize(int x, int y) : x(x), y(y) {}
                 constexpr int getX() const { return x; }
                 constexpr int getY() const { return y; }
@@ -15,6 +16,7 @@ namespace FSE::Helpers {
 
         struct ScreenSize {
             public:
+                ScreenSize() : x(0), y(0) {}
                 ScreenSize(int x, int y) : x(x), y(y) {}
                 ScreenSize(ConstantScreenSize constScreen) : x(constScreen.getX()), y(constScreen.getY()) {}
                 int getX() { return x; }

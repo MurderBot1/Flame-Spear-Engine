@@ -8,7 +8,7 @@
 namespace FSE::UI::OSWindows {
     class LinuxWindow : public BaseWindow {
         public: // Constructor
-            LinuxWindow(std::shared_ptr<ApplicationConstants> applicationConstants);
+            LinuxWindow();
         public:
             void updateBufferSize() override;
             void setPixel(int rgba, int index) override;

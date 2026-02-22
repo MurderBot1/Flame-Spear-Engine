@@ -1,11 +1,11 @@
 #include "ui/Window.h"
 
-FSE::UI::Window::Window(std::shared_ptr<ApplicationConstants> applicationConstants)
+FSE::UI::Window::Window()
     #if defined(_WIN32) || defined(_WIN64)
-        : WindowsWindow(applicationConstants) {
+        : WindowsWindow() {
     #elif defined(__linux__)
-        : LinuxWindow(applicationConstants) {
+        : LinuxWindow() {
     #elif defined(__APPLE__)
-        : MacWindow(applicationConstants) {
+        : MacWindow() {
     #endif
 }

@@ -8,7 +8,7 @@
 namespace FSE::UI::OSWindows {
     class MacWindow : public BaseWindow {
         public: // Constructor
-            MacWindow(std::shared_ptr<ApplicationConstants> applicationConstants);
+            MacWindow();
         public:
             void updateBufferSize() override;
             void setPixel(int rgba, int index) override;

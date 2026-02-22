@@ -19,7 +19,7 @@ namespace FSE::UI {
             : public OSWindows::MacWindow {
         #endif
             public: // Constructor
-                Window(std::shared_ptr<ApplicationConstants> applicationConstants);
+                Window();
     };
 
 }

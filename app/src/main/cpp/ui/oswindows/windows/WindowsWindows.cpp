@@ -2,8 +2,7 @@
 
 #include "ui/oswindows/windows/WindowsWindows.h"
 
-FSE::UI::OSWindows::WindowsWindow::WindowsWindow(std::shared_ptr<ApplicationConstants> applicationConstants)
-        : BaseWindow(applicationConstants) {
+FSE::UI::OSWindows::WindowsWindow::WindowsWindow() {
 
 }
 
