@@ -22,9 +22,9 @@ namespace FSE::Helpers {
                 int getX() { return x; }
                 int getY() { return y; }
                 int getTotal() { return x * y; }
-                int setX(int newX) { x = newX; }
-                int setY(int newY) { y = newY; }
-                int set(int newX, int newY) {x = newX; y = newY; }
+                void setX(int newX) { x = newX; }
+                void setY(int newY) { y = newY; }
+                void set(int newX, int newY) {x = newX; y = newY; }
             private:
                 int x, y;
         };
