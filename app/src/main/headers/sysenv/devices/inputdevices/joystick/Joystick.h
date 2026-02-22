@@ -1,5 +1,5 @@
 #ifndef Joystick_H
-#define Joystick_H
+#define Joystick_Hc
 
 #if defined(_WIN32) || defined(_WIN64)
     #include "sysenv/devices/inputdevices/joystick/osjoystick/windows/WindowsJoystick.h"
@@ -19,7 +19,6 @@ namespace FSE::System::Devices::Input::DeviceClasses {
         : OSJoystick::MacJoystick
     #endif
     {
-        
     };
 }
 

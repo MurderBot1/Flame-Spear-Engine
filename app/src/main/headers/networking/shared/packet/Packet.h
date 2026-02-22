@@ -28,13 +28,12 @@ namespace FSE::Networking::Packet {
         std::array<char, SIZE> data;
     };
 
-    struct Packet32   : PacketBase<PACKET_32_SIZE>   { explicit Packet32(int id); };
-    struct Packet64   : PacketBase<PACKET_64_SIZE>   { explicit Packet64(int id); };
-    struct Packet128  : PacketBase<PACKET_128_SIZE>  { explicit Packet128(int id); };
-    struct Packet256  : PacketBase<PACKET_256_SIZE>  { explicit Packet256(int id); };
-    struct Packet512  : PacketBase<PACKET_512_SIZE>  { explicit Packet512(int id); };
-    struct Packet1024 : PacketBase<PACKET_1024_SIZE> { explicit Packet1024(int id); };
-
+    typedef PacketBase<PACKET_32_SIZE> Packet32;
+    typedef PacketBase<PACKET_64_SIZE> Packet64;
+    typedef PacketBase<PACKET_128_SIZE> Packet128;
+    typedef PacketBase<PACKET_256_SIZE> Packet256;
+    typedef PacketBase<PACKET_512_SIZE> Packet512;
+    typedef PacketBase<PACKET_1024_SIZE> Packet1024;
 }
 
 #endif

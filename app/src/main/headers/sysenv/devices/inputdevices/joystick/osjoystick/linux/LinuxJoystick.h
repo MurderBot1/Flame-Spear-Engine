@@ -5,7 +5,10 @@
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSJoystick {
     class LinuxJoystick : BaseJoystick {
-
+        public:
+            bool getInput(BooleanJoystickInputs input) override;
+            float getInput(FloatJoystickInputs input) override;
+            Types::Vectors::Vector2 getInput(VectorJoystickInputs input) override;
     };
 }
 

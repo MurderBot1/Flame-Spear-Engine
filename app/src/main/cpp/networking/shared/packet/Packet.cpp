@@ -23,19 +23,4 @@ namespace FSE::Networking::Packet {
 
         return h;
     }
-
-    template struct PacketBase<PACKET_32_SIZE>;
-    template struct PacketBase<PACKET_64_SIZE>;
-    template struct PacketBase<PACKET_128_SIZE>;
-    template struct PacketBase<PACKET_256_SIZE>;
-    template struct PacketBase<PACKET_512_SIZE>;
-    template struct PacketBase<PACKET_1024_SIZE>;
-
-    Packet32::Packet32(int id)   : PacketBase(id) {}
-    Packet64::Packet64(int id)   : PacketBase(id) {}
-    Packet128::Packet128(int id) : PacketBase(id) {}
-    Packet256::Packet256(int id) : PacketBase(id) {}
-    Packet512::Packet512(int id) : PacketBase(id) {}
-    Packet1024::Packet1024(int id): PacketBase(id) {}
-
 } 

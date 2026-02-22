@@ -18,8 +18,7 @@ namespace FSE::System::Devices::Input::DeviceClasses {
     #elif defined(__APPLE__)
         : OSKeyboard::MacKeyboard
     #endif
-    {
-        
+    {  
     };
 }
 

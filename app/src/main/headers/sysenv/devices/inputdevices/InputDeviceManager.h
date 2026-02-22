@@ -8,7 +8,7 @@
 
 namespace FSE::System::Devices::Input {
     class InputDeviceManager {
-        private:
+        public:
             DeviceClasses::ControllerManager ControllerManager;
             DeviceClasses::JoystickManager JoystickManager;
             DeviceClasses::KeyboardManager KeyboardManager;

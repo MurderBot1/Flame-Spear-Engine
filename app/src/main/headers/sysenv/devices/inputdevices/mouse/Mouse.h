@@ -19,7 +19,6 @@ namespace FSE::System::Devices::Input::DeviceClasses {
         : OSMouse::MacMouse
     #endif
     {
-        
     };
 }
 
