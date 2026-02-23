@@ -5,3 +5,7 @@ build.ninja
 bin/
 bin-int/
 FlameSpearEngine.ninja
+**/__pycache__
+__pycache__
+temp/*
+!temp/about.txt
