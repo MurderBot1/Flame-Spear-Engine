@@ -73,17 +73,14 @@ def install_vulkan():
 def install_windows() -> None:
     subprocess.run(get_download_command(), shell=True)
     install_vulkan()
-    pass
 
 def install_linux() -> None:
     subprocess.run(get_download_command(), shell=True)
     install_vulkan()
-    pass
 
 def install_mac() -> None:
     subprocess.run(get_download_command(), shell=True)
     install_vulkan()
-    pass
 
 # -----------------------------
 # Main
