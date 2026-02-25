@@ -26,4 +26,12 @@ namespace FSE {
     void FSE::Application::setStartingScreenSize(int x, int y) {
         startingScreenSize = Helpers::Screen::ScreenSize(x, y);
     }
+
+    const std::string& FSE::Application::getName() {
+        return appName;
+    }
+
+    Helpers::Screen::ScreenSize FSE::Application::getStartingScreenSize() {
+        return startingScreenSize;
+    }
 }

@@ -5,3 +5,6 @@ build.ninja
 bin/
 bin-int/
 FlameSpearEngine.ninja
+
+#vsc
+.vscode/
