@@ -8,3 +8,11 @@ FlameSpearEngine.ninja
 
 #vsc
 .vscode/
+
+# Python
+**/__pycache__
+__pycache__
+
+# temporary
+temp/*
+!temp/about.txt
