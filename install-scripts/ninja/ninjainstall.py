@@ -1,31 +1,32 @@
-import os
 import installutil
-import subprocess
 from pathlib import Path
+import os
+import subprocess
 
-# Vulkan version to install
-VERSION = "1.4.341.0"
+# ninja version to install
+VERSION = "1.13.2"
 
 # Paths
-DOWNLOAD_PATH_WINDOWS : Path = Path("temp/vulkan.exe")
-DOWNLOAD_PATH_LINUX : Path = Path("temp/vulkan.tar.xz")
-DOWNLOAD_PATH_MAC : Path = Path("temp/vulkan.zip")
+DOWNLOAD_PATH_WINDOWS : Path = Path("temp/ninja.zip")
+DOWNLOAD_PATH_LINUX : Path = Path("temp/ninja.zip")
+DOWNLOAD_PATH_MAC : Path = Path("temp/ninja.zip")
+EXTRACT_PATH_WINDOWS : Path = Path("temp/ ")
 EXTRACT_PATH_LINUX : Path = Path("temp/ ")
 EXTRACT_PATH_MAC : Path = Path("temp/ ")
-INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "Vulkan"
+INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "ninja"
 
 # Download links
-DOWNLOAD_LINK_WINDOWS : str = installutil.get_curl_command(f"https://sdk.lunarg.com/sdk/download/{VERSION}/windows/vulkansdk-windows-X64-{VERSION}.exe", DOWNLOAD_PATH_WINDOWS)
-DOWNLOAD_LINK_LINUX : str = installutil.get_curl_command(f"https://sdk.lunarg.com/sdk/download/{VERSION}/linux/vulkansdk-linux-x86_64-{VERSION}.tar.xz", DOWNLOAD_PATH_LINUX)
-DOWNLOAD_LINK_MAC : str = installutil.get_curl_command(f"https://sdk.lunarg.com/sdk/download/{VERSION}/mac/vulkansdk-macos-{VERSION}.zip", DOWNLOAD_PATH_MAC)
+DOWNLOAD_LINK_WINDOWS : str = installutil.get_curl_command(f"https://github.com/ninja-build/ninja/releases/download/v{VERSION}/ninja-win.zip", DOWNLOAD_PATH_WINDOWS)
+DOWNLOAD_LINK_LINUX : str = installutil.get_curl_command(f"https://github.com/ninja-build/ninja/releases/download/v{VERSION}/ninja-linux.zip", DOWNLOAD_PATH_LINUX)
+DOWNLOAD_LINK_MAC : str = installutil.get_curl_command(f"https://github.com/ninja-build/ninja/releases/download/v{VERSION}/ninja-mac.zip", DOWNLOAD_PATH_MAC)
 
 # Commands to install vulkan
 WINDOWS_INSTALL_COMMANDS : list[str] = [
-    f"{DOWNLOAD_PATH_WINDOWS} --root {INSTALL_PATH} --accept-licenses --default-answer --confirm-command install",
+    ""
 ]
 
 LINUX_INSTALL_COMMANDS : list[str] = [
-    "",
+    ""
 ]
 
 MAC_INSTALL_COMMANDS : list[str] = [
@@ -45,7 +46,7 @@ def get_download_path() -> Path:
     return installutil.get_download_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
 
 # Run the executable downloaded and other setup items
-def install_vulkan():
+def install_ninja():
     installutil.run_commands(get_install_commands())
 
 # Removes the downloaded executable
@@ -56,13 +57,13 @@ def cleanup_install_executable():
     if installutil.IS_MAC and os.path.exists(EXTRACT_PATH_MAC):
         os.remove(EXTRACT_PATH_MAC)
 
-# Downloads the vulkan executable installer and run it
-def download_and_install_vulkan() -> None:
+# Downloads and installs ninja
+def download_and_install_ninja():
     os.makedirs(INSTALL_PATH, exist_ok=True)
     subprocess.run(get_download_command(), shell=True)
-    install_vulkan()
+    install_ninja()
     cleanup_install_executable()
 
-# Main function that is imported and ran to install vulkan
-def main() -> None:
-    download_and_install_vulkan()
+# Main function that is imported and ran to install ninja
+def main():
+    download_and_install_ninja()
