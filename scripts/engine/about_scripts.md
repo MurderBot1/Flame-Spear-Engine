@@ -48,7 +48,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-### fetch_deps/fetch_python/fetch_python + ending**
+### fetch_deps/fetch_python/fetch_python + ending
 This script runs these things  
 1. Downloads and installs python (3.13.12)
 
@@ -57,7 +57,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-### fetch_deps/fetch + ending**
+### fetch_deps/fetch + ending
 This script runs these things  
 1. Uses python to install other Flame Spear Engine
     1. Vulkan (to interact with GPU)
@@ -69,7 +69,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-### setup_build/setup_build + ending**
+### setup_build/setup_build + ending
 This script runs these things  
 1. Uses premake to create ninja build files
 
@@ -78,7 +78,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-### build/build + ending**
+### build/build + ending
 This script runs these things  
 1. Uses ninja to build the engine executable
 2. Moves the engine executable 
@@ -90,7 +90,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-### run/run + ending**
+### run/run + ending
 This script runs these things  
 1. Calls the project run script (specified as an argument)
 
