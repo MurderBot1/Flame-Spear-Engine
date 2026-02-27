@@ -1,14 +1,14 @@
 # About the scripts
 
 ## Endings of scripts
-**_window.bat** is the script for running that task on windows devices
-**_linux.sh** is the script for running that task on linux devices
-**_mac.sh** is the script for running that task on mac devices
+**_window.bat** is the script for running that task on windows devices  
+**_linux.sh** is the script for running that task on linux devices  
+**_mac.sh** is the script for running that task on mac devices  
 
 ## Scripts
 Scripts that you can use in Flame Spear Engine
 
-**setup_all_and_run + ending**
+**setup_all_and_run + ending**  
 This script runs these things
 1. Downloads and installs python (3.13.12)
 2. Uses python to install other Flame Spear Engine dependencies
@@ -30,7 +30,7 @@ EG (from Flame Spear Engines root dir)
 
 ```
 
-**setup_all + ending**
+**setup_all + ending**  
 This script runs these things
 1. Downloads and installs python (3.13.12)
 2. Uses python to install other Flame Spear Engine dependencies
@@ -49,7 +49,7 @@ EG (from Flame Spear Engines root dir)
 ```
 
 **fetch_deps/fetch_python/fetch_python + ending**
-This script runs these things
+This script runs these things  
 1. Downloads and installs python (3.13.12)
 
 EG (from Flame Spear Engines root dir)
@@ -58,7 +58,7 @@ EG (from Flame Spear Engines root dir)
 ```
 
 **fetch_deps/fetch + ending**
-This script runs these things
+This script runs these things  
 1. Uses python to install other Flame Spear Engine
     1. Vulkan (to interact with GPU)
     2. Premake (To create ninja build files)
@@ -70,7 +70,7 @@ EG (from Flame Spear Engines root dir)
 ```
 
 **setup_build/setup_build + ending**
-This script runs these things
+This script runs these things  
 1. Uses premake to create ninja build files
 
 EG (from Flame Spear Engines root dir)
@@ -79,7 +79,7 @@ EG (from Flame Spear Engines root dir)
 ```
 
 **build/build + ending**
-This script runs these things
+This script runs these things  
 1. Uses ninja to build the engine executable
 2. Moves the engine executable 
     1. If built in debug then it moves it to a testing release folder
@@ -91,7 +91,7 @@ EG (from Flame Spear Engines root dir)
 ```
 
 **run/run + ending**
-This script runs these things
+This script runs these things  
 1. Calls the project run script (specified as an argument)
 
 Args
