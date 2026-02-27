@@ -1,1 +1,0 @@
-The place where all temporary files needed to install packages will be.

@@ -13,7 +13,7 @@ DOWNLOAD_PATH_MAC : Path = Path("temp/ninja.zip")
 EXTRACT_PATH_WINDOWS : Path = Path("temp/ ")
 EXTRACT_PATH_LINUX : Path = Path("temp/ ")
 EXTRACT_PATH_MAC : Path = Path("temp/ ")
-INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "ninja"
+INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "Ninja"
 
 # Download links
 DOWNLOAD_LINK_WINDOWS : str = installutil.get_curl_command(f"https://github.com/ninja-build/ninja/releases/download/v{VERSION}/ninja-win.zip", DOWNLOAD_PATH_WINDOWS)

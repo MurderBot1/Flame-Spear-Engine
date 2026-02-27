@@ -69,6 +69,6 @@ project "FlameSpearEngine"
 
     filter "configurations:Release"
         optimize "On"
-        defines { "NDEBUG" }
+        defines { "RELEASE" }
 
     filter {} -- clear filter
