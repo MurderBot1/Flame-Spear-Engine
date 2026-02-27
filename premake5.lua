@@ -60,6 +60,46 @@ project "FlameSpearEngine"
             "-Wconversion"
         }
 
+    -- 
+    -- Vulkan
+    -- 
+    filter "system:windows"
+        systemversion "latest"
+        includedirs {
+            os.getenv("VULKAN_SDK") .. "/Include"
+        }
+        libdirs {
+            os.getenv("VULKAN_SDK") .. "/Lib"
+        }
+        links { "vulkan-1" }
+
+    filter "system:linux"
+        includedirs {
+            os.getenv("VULKAN_SDK") .. "/include"
+        }
+        libdirs {
+            os.getenv("VULKAN_SDK") .. "/lib"
+        }
+        links { "vulkan" }
+    
+    filter "system:macosx"
+        includedirs {
+            os.getenv("VULKAN_SDK") .. "/include"
+        }
+        libdirs {
+            os.getenv("VULKAN_SDK") .. "/lib"
+        }
+        links {
+            "vulkan",     -- Vulkan loader
+            "MoltenVK"    -- Metal-backed Vulkan implementation
+        }
+        -- Frameworks needed for MoltenVK
+        linkoptions {
+            "-framework Cocoa",
+            "-framework QuartzCore",
+            "-framework Metal"
+        }
+
     --
     -- Debug / Release configs
     --
