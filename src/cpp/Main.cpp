@@ -2,11 +2,11 @@
 #include "logger/Logger.h"
 
 int main () {
-    FSE::Logger::startLogger();
-    FSE::Logger::enterStart();
-    FSE::Logger::nextFrame();
-    FSE::Logger::nextFrame();
-    FSE::Logger::nextFrame();
-    FSE::Logger::enterShutdown();
+    FSE::Logging::Logger::startLogger();
+    FSE::Logging::Logger::enterStart();
+    FSE::Logging::Logger::nextFrame();
+    FSE::Logging::Logger::nextFrame();
+    FSE::Logging::Logger::nextFrame();
+    FSE::Logging::Logger::enterShutdown();
     FSE::Application::run();
 }

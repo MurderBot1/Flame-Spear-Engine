@@ -2,13 +2,15 @@
 #define Logger_H
 
 #include "base/Application.h"
+#include "logger/LoggerConstants.h"
 
 #include <fstream>
-#include <chrono>
+#include <iostream>
 #include <string>
 #include <sstream>
+#include <filesystem>
 
-namespace FSE {
+namespace FSE::Logging {
     class Logger {
         public:
             static void startLogger();
