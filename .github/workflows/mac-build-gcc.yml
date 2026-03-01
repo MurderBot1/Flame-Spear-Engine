@@ -1,0 +1,18 @@
+name: gcc-macos-build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  gcc-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install compiler (GCC)
+        run: |
+          brew install gcc
+          g++-14 --version

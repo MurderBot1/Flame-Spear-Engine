@@ -1,4 +1,4 @@
-name: CI
+name: gcc-windows-build
 
 on:
   push:
@@ -6,9 +6,13 @@ on:
   pull_request:
 
 jobs:
-  build:
+  gcc-windows:
     runs-on: windows-latest
-
     steps:
-      - name: Check out code
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install compiler (MinGW GCC)
+        run: |
+          choco install mingw -y
+          g++ --version

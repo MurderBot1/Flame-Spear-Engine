@@ -1,4 +1,4 @@
-name: msvc-windows
+name: msvc-windows-build
 
 on:
   push:

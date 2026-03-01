@@ -1,0 +1,19 @@
+name: gcc-linux-build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  gcc-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install compiler (GCC)
+        run: |
+          sudo apt update
+          sudo apt install -y build-essential
+          g++ --version

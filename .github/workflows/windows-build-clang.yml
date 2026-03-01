@@ -1,4 +1,4 @@
-name: clang-windows
+name: clang-windows-build
 
 on:
   push:
