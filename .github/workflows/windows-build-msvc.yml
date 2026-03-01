@@ -1,0 +1,19 @@
+name: msvc-windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  msvc-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install compiler (MSVC)
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Show compiler version
+        run: cl

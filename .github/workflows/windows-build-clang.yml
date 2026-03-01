@@ -1,0 +1,19 @@
+name: clang-windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  clang-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install compiler (Clang-CL)
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Show compiler version
+        run: clang-cl --version

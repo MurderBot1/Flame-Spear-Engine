@@ -1,0 +1,16 @@
+name: clang-macos
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  clang-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install compiler (Clang)
+        run: clang++ --version
