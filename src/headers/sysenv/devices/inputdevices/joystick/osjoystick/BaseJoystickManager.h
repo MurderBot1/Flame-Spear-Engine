@@ -5,10 +5,10 @@
 #include "sysenv/devices/inputdevices/joystick/Joystick.h"
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSJoystick {
-    class BaseJoystickManager {
-        private:
-            std::vector<Joystick> devices;
-    };
-}
+class BaseJoystickManager {
+private:
+  std::vector<Joystick> devices;
+};
+} // namespace FSE::System::Devices::Input::DeviceClasses::OSJoystick
 
 #endif

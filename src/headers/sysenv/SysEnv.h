@@ -4,9 +4,9 @@
 #include "sysenv/devices/inputdevices/InputDeviceManager.h"
 
 namespace FSE::System {
-    class SysEnv {    
-        static Devices::Input::InputDeviceManager inputManager;
-    };
-}
+class SysEnv {
+  static Devices::Input::InputDeviceManager inputManager;
+};
+} // namespace FSE::System
 
 #endif

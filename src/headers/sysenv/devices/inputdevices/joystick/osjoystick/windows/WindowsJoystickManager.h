@@ -2,9 +2,7 @@
 #define WindowsJoystickManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSJoystick {
-    class WindowsJoystickManager {
-        
-    };
-}
+class WindowsJoystickManager {};
+} // namespace FSE::System::Devices::Input::DeviceClasses::OSJoystick
 
 #endif

@@ -2,9 +2,7 @@
 #define MacControllerManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSController {
-    class MacControllerManager {
-        
-    };
-}
+class MacControllerManager {};
+} // namespace FSE::System::Devices::Input::DeviceClasses::OSController
 
 #endif

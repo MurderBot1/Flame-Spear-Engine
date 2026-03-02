@@ -4,9 +4,7 @@
 #include "sysenv/devices/outputdevices/speaker/osspeaker/BaseSpeaker.h"
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker {
-    class MacSpeaker : BaseSpeaker {
-        
-    };
-}
+class MacSpeaker : BaseSpeaker {};
+} // namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker
 
 #endif

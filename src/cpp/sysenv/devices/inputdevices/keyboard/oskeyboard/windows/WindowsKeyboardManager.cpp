@@ -2,7 +2,7 @@
 
 #include "sysenv/devices/inputdevices/keyboard/oskeyboard/windows/WindowsKeyboardManager.h"
 
-void FSE::System::Devices::Input::DeviceClasses::OSKeyboard::WindowsKeyboardManager::update() {
-}
+void FSE::System::Devices::Input::DeviceClasses::OSKeyboard::
+    WindowsKeyboardManager::update() {}
 
 #endif
