@@ -6,13 +6,15 @@
 #include "sysenv/devices/inputdevices/keyboard/KeyboardManager.h"
 #include "sysenv/devices/inputdevices/mouse/MouseManager.h"
 
-namespace FSE::System::Devices::Input {
-class InputDeviceManager {
-public:
-  DeviceClasses::ControllerManager ControllerManager;
-  DeviceClasses::JoystickManager JoystickManager;
-  DeviceClasses::KeyboardManager KeyboardManager;
-  DeviceClasses::MouseManager MouseManager;
+namespace FSE::System::Devices::Input
+{
+class InputDeviceManager
+{
+  public:
+    DeviceClasses::ControllerManager ControllerManager;
+    DeviceClasses::JoystickManager JoystickManager;
+    DeviceClasses::KeyboardManager KeyboardManager;
+    DeviceClasses::MouseManager MouseManager;
 };
 } // namespace FSE::System::Devices::Input
 

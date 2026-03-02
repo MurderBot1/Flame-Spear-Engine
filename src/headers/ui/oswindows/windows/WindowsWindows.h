@@ -5,18 +5,20 @@
 
 #include "ui/oswindows/OSWindows.h"
 
-namespace FSE::UI::OSWindows {
-class WindowsWindow : public BaseWindow {
-public: // Constructor
-  WindowsWindow();
+namespace FSE::UI::OSWindows
+{
+class WindowsWindow : public BaseWindow
+{
+  public: // Constructor
+    WindowsWindow();
 
-public:
-  void updateBufferSize() override;
-  void setPixel(int rgba, int index) override;
-  void setPixels(std::vector<int> newPixels) override;
-  void display() override;
+  public:
+    void updateBufferSize() override;
+    void setPixel(int rgba, int index) override;
+    void setPixels(std::vector<int> newPixels) override;
+    void display() override;
 
-private:
+  private:
 };
 } // namespace FSE::UI::OSWindows
 #endif

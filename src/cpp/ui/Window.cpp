@@ -2,10 +2,13 @@
 
 FSE::UI::Window::Window()
 #if defined(_WIN32) || defined(_WIN64)
-    : WindowsWindow() {
+    : WindowsWindow()
+{
 #elif defined(__linux__)
-    : LinuxWindow() {
+    : LinuxWindow()
+{
 #elif defined(__APPLE__)
-    : MacWindow() {
+    : MacWindow()
+{
 #endif
 }

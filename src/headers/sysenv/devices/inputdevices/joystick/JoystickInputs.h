@@ -1,16 +1,20 @@
 #ifndef JoystickInputs_H
 #define JoystickInputs_H
 
-namespace FSE::System::Devices::Input::DeviceClasses {
-enum BooleanJoystickInputs {
+namespace FSE::System::Devices::Input::DeviceClasses
+{
+enum BooleanJoystickInputs
+{
 
 };
 
-enum FloatJoystickInputs {
+enum FloatJoystickInputs
+{
 
 };
 
-enum VectorJoystickInputs {
+enum VectorJoystickInputs
+{
 
 };
 

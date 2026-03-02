@@ -9,7 +9,8 @@
 #include "sysenv/devices/outputdevices/speaker/osspeaker/mac/MacSpeaker.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses {
+namespace FSE::System::Devices::Input::DeviceClasses
+{
 class Speaker
 #if defined(_WIN32) || defined(_WIN64)
     : OSSpeaker::WindowsSpeaker

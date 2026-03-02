@@ -9,7 +9,8 @@
 #include "sysenv/devices/inputdevices/controller/oscontroller/mac/MacControllerManager.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses {
+namespace FSE::System::Devices::Input::DeviceClasses
+{
 class ControllerManager
 #if defined(_WIN32) || defined(_WIN64)
     : OSController::WindowsControllerManager

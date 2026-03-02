@@ -1,14 +1,16 @@
 #ifndef Vector2_H
 #define Vector2_H
 
-namespace Types::Vectors {
-class Vector2 {
-  Vector2(float x, float y);
+namespace Types::Vectors
+{
+class Vector2
+{
+    Vector2(float x, float y);
 
-  float x, y;
+    float x, y;
 
-public:
-  static const Vector2 ZERO;
+  public:
+    static const Vector2 ZERO;
 };
 } // namespace Types::Vectors
 

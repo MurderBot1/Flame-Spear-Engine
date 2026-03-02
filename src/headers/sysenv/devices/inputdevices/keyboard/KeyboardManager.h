@@ -9,7 +9,8 @@
 #include "sysenv/devices/inputdevices/keyboard/oskeyboard/mac/MacKeyboardManager.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses {
+namespace FSE::System::Devices::Input::DeviceClasses
+{
 class KeyboardManager
 #if defined(_WIN32) || defined(_WIN64)
     : OSKeyboard::WindowsKeyboardManager
