@@ -16,10 +16,3 @@ BreakBeforeBraces: Attach
 
 SortIncludes: true
 IncludeBlocks: Regroup
-
-AllowAllArgumentsOnNextLine: true
-AllowAllParametersOfDeclarationOnNextLine: true
-BreakBeforeTernaryOperators: true
-BreakConstructorInitializersStyle: AfterColon
-BreakInheritanceListStyle: AfterColon
-BreakStringLiterals: true
