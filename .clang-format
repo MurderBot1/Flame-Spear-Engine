@@ -9,10 +9,10 @@ ColumnLimit: 120
 PointerAlignment: Left
 DerivePointerAlignment: false
 
-AllowShortIfStatementsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Empty
 
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Attach
 
 SortIncludes: true
 IncludeBlocks: Regroup
