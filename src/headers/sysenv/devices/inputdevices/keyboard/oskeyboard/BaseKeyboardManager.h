@@ -5,10 +5,8 @@
 
 #include <vector>
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
-{
-class BaseKeyboardManager
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard {
+class BaseKeyboardManager {
   public:
     virtual void update() = 0;
 

@@ -3,10 +3,8 @@
 
 #include "sysenv/devices/inputdevices/controller/oscontroller/BaseController.h"
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSController
-{
-class WindowsController : BaseController
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSController {
+class WindowsController : BaseController {
   public:
     bool getInput(BooleanControllerInputs input) override;
     float getInput(FloatControllerInputs input) override;

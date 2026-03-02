@@ -9,8 +9,7 @@
 #include "sysenv/devices/inputdevices/joystick/osjoystick/mac/MacJoystick.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
 class Joystick
 #if defined(_WIN32) || defined(_WIN64)
     : OSJoystick::WindowsJoystick

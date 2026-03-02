@@ -6,16 +6,13 @@
 #include <memory>
 #include <vector>
 
-namespace FSE::UI::OSWindows
-{
-class BaseWindow
-{
+namespace FSE::UI::OSWindows {
+class BaseWindow {
   public: // Constructor
     BaseWindow();
 
   public: // Getter / Setters
-    Helpers::Screen::ScreenSize getScreenSize()
-    {
+    Helpers::Screen::ScreenSize getScreenSize() {
         return screenSize;
     }
 

@@ -10,10 +10,8 @@
 #include <sstream>
 #include <string>
 
-namespace FSE::Logging
-{
-class Logger
-{
+namespace FSE::Logging {
+class Logger {
   public:
     static void startLogger();
     static void enterStart();

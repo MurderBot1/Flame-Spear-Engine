@@ -9,11 +9,9 @@
 #include <type_traits>
 #include <vector>
 
-namespace FSE::Networking::Packet
-{
+namespace FSE::Networking::Packet {
 
-template <typename T> class PacketBuilder
-{
+template <typename T> class PacketBuilder {
     static_assert(std::is_base_of<PacketBaseTag, T>::value,
                   "PacketBuilder<T> requires T to inherit from PacketBaseTag");
 

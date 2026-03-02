@@ -3,10 +3,8 @@
 
 #include "sysenv/devices/inputdevices/keyboard/oskeyboard/BaseKeyboard.h"
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
-{
-class LinuxKeyboard : BaseKeyboard
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard {
+class LinuxKeyboard : BaseKeyboard {
   public:
     bool getInput(BooleanKeyboardInputs input) override;
     float getInput(FloatKeyboardInputs input) override;

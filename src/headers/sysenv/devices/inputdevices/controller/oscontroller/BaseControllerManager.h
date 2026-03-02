@@ -5,10 +5,8 @@
 
 #include <vector>
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSController
-{
-class BaseControllerManager
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSController {
+class BaseControllerManager {
   private:
     std::vector<Controller> devices;
 };

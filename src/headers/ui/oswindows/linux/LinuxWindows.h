@@ -5,10 +5,8 @@
 
 #include "ui/oswindows/OSWindows.h"
 
-namespace FSE::UI::OSWindows
-{
-class LinuxWindow : public BaseWindow
-{
+namespace FSE::UI::OSWindows {
+class LinuxWindow : public BaseWindow {
   public: // Constructor
     LinuxWindow();
 

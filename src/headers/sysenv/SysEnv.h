@@ -3,10 +3,8 @@
 
 #include "sysenv/devices/inputdevices/InputDeviceManager.h"
 
-namespace FSE::System
-{
-class SysEnv
-{
+namespace FSE::System {
+class SysEnv {
     static Devices::Input::InputDeviceManager inputManager;
 };
 } // namespace FSE::System

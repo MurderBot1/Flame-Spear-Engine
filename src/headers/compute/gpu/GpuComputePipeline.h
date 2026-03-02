@@ -4,10 +4,8 @@
 #include <array>
 #include <cstdint>
 
-namespace FSE::Compute::GPU
-{
-class GpuComputePipeline
-{
+namespace FSE::Compute::GPU {
+class GpuComputePipeline {
   public:
     GpuComputePipeline();
     void addData(uint64_t ptr, int& outIndex);

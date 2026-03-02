@@ -9,8 +9,7 @@
 #include "sysenv/devices/inputdevices/controller/oscontroller/mac/MacController.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
 class Controller
 #if defined(_WIN32) || defined(_WIN64)
     : OSController::WindowsController

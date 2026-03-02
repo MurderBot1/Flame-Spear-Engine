@@ -1,20 +1,16 @@
 #ifndef ControllerInputs_H
 #define ControllerInputs_H
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
-enum BooleanControllerInputs
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
+enum BooleanControllerInputs {
 
 };
 
-enum FloatControllerInputs
-{
+enum FloatControllerInputs {
 
 };
 
-enum VectorControllerInputs
-{
+enum VectorControllerInputs {
 
 };
 

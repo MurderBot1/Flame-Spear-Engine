@@ -4,10 +4,8 @@
 #include "sysenv/devices/inputdevices/mouse/MouseInputs.h"
 #include "types/vectors/Vector2.h"
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSMouse
-{
-class BaseMouse
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSMouse {
+class BaseMouse {
   public:
     virtual bool getInput(BooleanMouseInputs input) = 0;
     virtual float getInput(FloatMouseInputs input) = 0;

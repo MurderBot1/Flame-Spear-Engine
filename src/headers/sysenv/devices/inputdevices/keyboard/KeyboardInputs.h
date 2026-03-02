@@ -12,11 +12,9 @@
 #include ""
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
 /// @brief Keyboard inputs that result in a true / false hexadecimal value
-enum BooleanKeyboardInputs
-{
+enum BooleanKeyboardInputs {
     /// @brief This is the keyboard input enum for the backspace key
     ENUM_DEF(KEYBOARD_BACKSPACE, VK_BACK, 0, 0)
 
@@ -462,13 +460,11 @@ enum BooleanKeyboardInputs
     ENUM_DEF(KEYBOARD_ZOOM, VK_ZOOM, 0, 0)
 };
 
-enum FloatKeyboardInputs
-{
+enum FloatKeyboardInputs {
 
 };
 
-enum VectorKeyboardInputs
-{
+enum VectorKeyboardInputs {
 
 };
 

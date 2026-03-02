@@ -2,10 +2,8 @@
 
 #ifdef DEBUG
 
-namespace FSE::Logging
-{
-void Logger::startLogger()
-{
+namespace FSE::Logging {
+void Logger::startLogger() {
     // Get program start time
     programStartTime =
         std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch())
@@ -26,13 +24,11 @@ void Logger::startLogger()
     frameCount = 0;
 }
 
-void Logger::enterStart()
-{
+void Logger::enterStart() {
     file << "start:" << "\n    name: " << FSE::Application::getName() << "\n    timestamp (ms): " << 0 << "\n    data:";
 }
 
-void Logger::nextFrame()
-{
+void Logger::nextFrame() {
     // Increment the frame
     frameCount++;
 
@@ -44,8 +40,7 @@ void Logger::nextFrame()
          << "\n    data:";
 }
 
-void Logger::enterShutdown()
-{
+void Logger::enterShutdown() {
     // end data
     file << "\nshutdown:" << "\n    timestamp (ms): "
          << std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch())
@@ -57,14 +52,12 @@ void Logger::enterShutdown()
     file.close();
 }
 
-void Logger::addData(const std::string& name, const std::string& data)
-{
+void Logger::addData(const std::string& name, const std::string& data) {
     (void)name;
     (void)data;
 }
 
-void Logger::addHeaderData(const std::string& name, const std::string& data)
-{
+void Logger::addHeaderData(const std::string& name, const std::string& data) {
     (void)name;
     (void)data;
 }
@@ -73,8 +66,7 @@ void Logger::addHeaderData(const std::string& name, const std::string& data)
 
 #else
 
-namespace FSE::Logging
-{
+namespace FSE::Logging {
 void Logger::startLogger() {}
 
 void Logger::enterStart() {}

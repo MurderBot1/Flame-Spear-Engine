@@ -5,10 +5,8 @@
 
 #include <string>
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
-{
-class WindowsKeyboard : BaseKeyboard
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard {
+class WindowsKeyboard : BaseKeyboard {
   public:
     WindowsKeyboard(HANDLE handle, std::wstring deviceName, RID_DEVICE_INFO info);
 

@@ -9,8 +9,7 @@
 #include "sysenv/devices/inputdevices/mouse/osmouse/mac/MacMouseManager.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
 class MouseManager
 #if defined(_WIN32) || defined(_WIN64)
     : OSMouse::WindowsMouseManager

@@ -5,10 +5,8 @@
 
 #include <vector>
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSMouse
-{
-class BaseMouseManager
-{
+namespace FSE::System::Devices::Input::DeviceClasses::OSMouse {
+class BaseMouseManager {
   private:
     std::vector<Mouse> devices;
 };

@@ -1,20 +1,16 @@
 #ifndef MouseInputs_H
 #define MouseInputs_H
 
-namespace FSE::System::Devices::Input::DeviceClasses
-{
-enum BooleanMouseInputs
-{
+namespace FSE::System::Devices::Input::DeviceClasses {
+enum BooleanMouseInputs {
 
 };
 
-enum FloatMouseInputs
-{
+enum FloatMouseInputs {
 
 };
 
-enum VectorMouseInputs
-{
+enum VectorMouseInputs {
 
 };
 

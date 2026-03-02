@@ -1,8 +1,7 @@
 #include "base/Application.h"
 #include "logger/Logger.h"
 
-int main()
-{
+int main() {
     FSE::Logging::Logger::startLogger();
     FSE::Logging::Logger::enterStart();
     FSE::Logging::Logger::nextFrame();

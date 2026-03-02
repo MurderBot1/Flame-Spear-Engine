@@ -5,10 +5,8 @@
 
 #include <string>
 
-namespace FSE
-{
-class Application
-{
+namespace FSE {
+class Application {
   public:
     static void run();
 
