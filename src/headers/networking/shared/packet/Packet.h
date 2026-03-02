@@ -12,19 +12,23 @@
 #define PACKET_512_SIZE 512
 #define PACKET_1024_SIZE 1024
 
-namespace FSE::Networking::Packet {
+namespace FSE::Networking::Packet
+{
 
-struct PacketBaseTag {};
+struct PacketBaseTag
+{
+};
 
-template <size_t SIZE> struct PacketBase : PacketBaseTag {
-  explicit PacketBase(int packetID);
+template <size_t SIZE> struct PacketBase : PacketBaseTag
+{
+    explicit PacketBase(int packetID);
 
-  void constructHash();
-  uint64_t getHash() const;
+    void constructHash();
+    uint64_t getHash() const;
 
-  int packetID;
-  uint64_t hash;
-  std::array<char, SIZE> data;
+    int packetID;
+    uint64_t hash;
+    std::array<char, SIZE> data;
 };
 
 typedef PacketBase<PACKET_32_SIZE> Packet32;

@@ -6,13 +6,15 @@ FSE::UI::OSWindows::WindowsWindow::WindowsWindow() {}
 
 void FSE::UI::OSWindows::WindowsWindow::updateBufferSize() {}
 
-void FSE::UI::OSWindows::WindowsWindow::setPixel(int rgba, int index) {
-  (void)rgba;
-  (void)index;
+void FSE::UI::OSWindows::WindowsWindow::setPixel(int rgba, int index)
+{
+    (void)rgba;
+    (void)index;
 }
 
-void FSE::UI::OSWindows::WindowsWindow::setPixels(std::vector<int> newPixels) {
-  (void)newPixels;
+void FSE::UI::OSWindows::WindowsWindow::setPixels(std::vector<int> newPixels)
+{
+    (void)newPixels;
 }
 
 void FSE::UI::OSWindows::WindowsWindow::display() {}

@@ -3,10 +3,12 @@
 
 #include "sysenv/devices/inputdevices/keyboard/oskeyboard/BaseKeyboardManager.h"
 
-namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard {
-class WindowsKeyboardManager : BaseKeyboardManager {
-public:
-  void update() override;
+namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
+{
+class WindowsKeyboardManager : BaseKeyboardManager
+{
+  public:
+    void update() override;
 };
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
 

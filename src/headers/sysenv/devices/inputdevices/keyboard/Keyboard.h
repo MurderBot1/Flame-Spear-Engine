@@ -9,7 +9,8 @@
 #include "sysenv/devices/inputdevices/keyboard/oskeyboard/mac/MacKeyboard.h"
 #endif
 
-namespace FSE::System::Devices::Input::DeviceClasses {
+namespace FSE::System::Devices::Input::DeviceClasses
+{
 class Keyboard
 #if defined(_WIN32) || defined(_WIN64)
     : OSKeyboard::WindowsKeyboard
