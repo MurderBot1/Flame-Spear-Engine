@@ -1,4 +1,4 @@
-name: After PR Merge
+name: Create deploy windows
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: gcc-macos-build
+name: GCC build mac
 
 on:
   push:

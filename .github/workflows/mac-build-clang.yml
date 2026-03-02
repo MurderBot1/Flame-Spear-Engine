@@ -1,4 +1,4 @@
-name: clang-macos-build
+name: Clang build mac
 
 on:
   push:

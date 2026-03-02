@@ -1,4 +1,4 @@
-name: clang-formatter
+name: Formatter
 
 on:
   push:

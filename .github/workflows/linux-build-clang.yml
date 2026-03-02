@@ -1,4 +1,4 @@
-name: clang-linux-build
+name: Clang build linux
 
 on:
   push:
