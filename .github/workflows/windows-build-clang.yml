@@ -2,7 +2,7 @@ name: Clang build windows
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
 
 jobs:
@@ -17,3 +17,5 @@ jobs:
 
       - name: Show compiler version
         run: clang-cl --version
+      
+      - name: build

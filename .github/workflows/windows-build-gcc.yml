@@ -1,8 +1,8 @@
-name: GCC Windows build
+name: GCC windows build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
 
 jobs:
@@ -16,3 +16,5 @@ jobs:
         run: |
           choco install mingw -y
           g++ --version
+      
+      - name: build

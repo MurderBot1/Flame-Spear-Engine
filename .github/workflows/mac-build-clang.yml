@@ -2,7 +2,7 @@ name: Clang build mac
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
 
 jobs:
@@ -14,3 +14,5 @@ jobs:
 
       - name: Install compiler (Clang)
         run: clang++ --version
+      
+      - name: build

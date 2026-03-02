@@ -2,7 +2,7 @@ name: GCC build linux
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
 
 jobs:
@@ -17,3 +17,5 @@ jobs:
           sudo apt update
           sudo apt install -y build-essential
           g++ --version
+      
+      - name: build
