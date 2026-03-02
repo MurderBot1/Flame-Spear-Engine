@@ -1,0 +1,13 @@
+name: After PR Merge
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  after-merge:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
