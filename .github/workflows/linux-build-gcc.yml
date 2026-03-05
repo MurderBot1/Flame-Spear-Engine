@@ -20,4 +20,4 @@ jobs:
       
       - name: build
         run: |
-        echo "Building with GCC on Linux..."
+          echo "Building with GCC on Linux..."

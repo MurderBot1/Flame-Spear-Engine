@@ -20,4 +20,4 @@ jobs:
       
       - name: build
         run: |
-        echo "Building with MSVC on Windows..."
+          echo "Building with MSVC on Windows..."

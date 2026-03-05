@@ -20,4 +20,4 @@ jobs:
       
       - name: build
         run: |
-        echo "Building with Clang on Windows..."
+          echo "Building with Clang on Windows..."
