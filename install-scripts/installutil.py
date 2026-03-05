@@ -2,6 +2,8 @@ import os
 import platform
 from pathlib import Path
 import subprocess
+import zipfile
+import tarfile
 
 # Operating system variables
 OS_NAME : str = platform.system()
@@ -58,3 +60,13 @@ def run_commands(commands : list[str]) -> None:
     for command in commands:
         print(f"Executing : {command}")
         subprocess.run(command, shell=True)
+
+# Takes in a compressed file and then extracts it to a provided location
+def extract(in_path : Path, out_path : Path) -> None:
+    file_type = in_path.split('.', 1)[1] if '.' in in_path else ''
+    if file_type == "zip":
+        zipfile.ZipFile(in_path).extractall(out_path)
+    elif file_type == "tar.gz" or file_type == "tar.xz":
+        tarfile.TarFile(in_path).extractall(out_path)
+    else:
+        print(f"{file_type} not supported")

@@ -49,12 +49,16 @@ def get_download_path() -> Path:
 def get_extract_path() -> Path:
     return installutil.get_path(EXTRACT_PATH_WINDOWS, EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
+# extract downloaded file
+def extract_premake() -> None:
+    installutil.extract(get_download_path(), get_extract_path())
+
 # Run the executable downloaded and other setup items
-def install_premake():
+def install_premake() -> None:
     installutil.run_commands(get_install_commands())
 
 # Removes the downloaded executable
-def cleanup_install_executable():
+def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
     extract_path : Path = get_extract_path()
     if os.path.exists(download_path):
@@ -63,12 +67,13 @@ def cleanup_install_executable():
         os.remove(extract_path)
 
 # Downloads and installs premake
-def download_and_install_premake():
+def download_and_install_premake() -> None:
     os.makedirs(INSTALL_PATH, exist_ok=True)
     subprocess.run(get_download_command(), shell=True)
+    extract_premake()
     install_premake()
     cleanup_install_executable()
 
 # Main function that is imported and ran to install premake
-def main():
+def main() -> None:
     download_and_install_premake()

@@ -44,12 +44,22 @@ def get_install_commands() -> list[str]:
 def get_download_path() -> Path:
     return installutil.get_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
 
+# Getter for extraction path
+def get_extract_path() -> Path:
+    return installutil.get_path(Path(), EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
+
+# extract downloaded file
+def extract_vulkan() -> None:
+    if(installutil.IS_WINDOWS):
+        return
+    installutil.extract(get_download_path(), get_extract_path())
+
 # Run the executable downloaded and other setup items
-def install_vulkan():
+def install_vulkan() -> None:
     installutil.run_commands(get_install_commands())
 
 # Removes the downloaded executable
-def cleanup_install_executable():
+def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
     if os.path.exists(download_path):
         os.remove(download_path)
@@ -62,6 +72,7 @@ def cleanup_install_executable():
 def download_and_install_vulkan() -> None:
     os.makedirs(INSTALL_PATH, exist_ok=True)
     subprocess.run(get_download_command(), shell=True)
+    extract_vulkan()
     install_vulkan()
     cleanup_install_executable()
 

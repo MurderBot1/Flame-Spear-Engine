@@ -6,7 +6,7 @@ from ninja.ninjainstall import main as ninjainstall
 
 import sys
 
-def main():
+def main() -> None:
     print(f"Detected OS: {OS_NAME}")
     
     if not is_supported():

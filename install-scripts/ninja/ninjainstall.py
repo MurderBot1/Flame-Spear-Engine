@@ -49,12 +49,16 @@ def get_download_path() -> Path:
 def get_extract_path() -> Path:
     return installutil.get_path(EXTRACT_PATH_WINDOWS, EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
+# extract downloaded file
+def extract_ninja() -> None:
+    installutil.extract(get_download_path(), get_extract_path())
+
 # Run the executable downloaded and other setup items
-def install_ninja():
+def install_ninja() -> None:
     installutil.run_commands(get_install_commands())
 
 # Removes the downloaded executable
-def cleanup_install_executable():
+def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
     if os.path.exists(download_path):
         os.remove(download_path)
@@ -62,12 +66,13 @@ def cleanup_install_executable():
         os.remove(EXTRACT_PATH_MAC)
 
 # Downloads and installs ninja
-def download_and_install_ninja():
+def download_and_install_ninja() -> None:
     os.makedirs(INSTALL_PATH, exist_ok=True)
     subprocess.run(get_download_command(), shell=True)
+    extract_ninja()
     install_ninja()
     cleanup_install_executable()
 
 # Main function that is imported and ran to install ninja
-def main():
+def main() -> None:
     download_and_install_ninja()
