@@ -26,7 +26,7 @@ jobs:
       - name: Run Black on all Python files
         run: |
           echo "Running Black on entire repository"
-          black .
+          black --config formatting/guides/black-format.toml .
 
       - name: Commit Black formatting changes
         uses: stefanzweifel/git-auto-commit-action@v5
