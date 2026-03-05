@@ -1,4 +1,4 @@
-name: Formatter
+name: CPP Formatter
 
 on:
   push:
