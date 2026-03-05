@@ -23,11 +23,10 @@ jobs:
       - name: Install Black
         run: pip install black
 
-      - name: Load directory list and run Black
+      - name: Run Black on all Python files
         run: |
-          DIRS=$(cat formatting/black-format-dirs.txt | tr '\n' ' ')
-          echo "Formatting directories: $DIRS"
-          black $DIRS
+          echo "Running Black on entire repository"
+          black .
 
       - name: Commit Black formatting changes
         uses: stefanzweifel/git-auto-commit-action@v5
