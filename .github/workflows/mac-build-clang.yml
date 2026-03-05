@@ -16,3 +16,5 @@ jobs:
         run: clang++ --version
       
       - name: build
+      - run: |
+        echo Building with Clang on macOS...

@@ -18,3 +18,5 @@ jobs:
           g++-14 --version
       
       - name: build
+      - run: |
+        echo Building with GCC on macOS...

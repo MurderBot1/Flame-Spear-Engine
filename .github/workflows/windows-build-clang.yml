@@ -19,3 +19,5 @@ jobs:
         run: clang-cl --version
       
       - name: build
+      - run: |
+        echo Building with Clang on Windows...

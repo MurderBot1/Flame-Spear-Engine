@@ -19,3 +19,5 @@ jobs:
         run: cl
       
       - name: build
+      - run: |
+        echo Building with MSVC on Windows...
