@@ -48,6 +48,11 @@ def get_download_path() -> Path:
 def get_extract_path() -> Path:
     return installutil.get_path(Path(), EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
+# Downloads the vulkan executable installer and run it
+def download_vulkan() -> None:
+    os.makedirs(INSTALL_PATH, exist_ok=True)
+    subprocess.run(get_download_command(), shell=True)
+
 # extract downloaded file
 def extract_vulkan() -> None:
     if(installutil.IS_WINDOWS):
@@ -68,8 +73,7 @@ def cleanup_install_executable() -> None:
 
 # Downloads the vulkan executable installer and run it
 def download_and_install_vulkan() -> None:
-    os.makedirs(INSTALL_PATH, exist_ok=True)
-    subprocess.run(get_download_command(), shell=True)
+    download_vulkan()
     extract_vulkan()
     install_vulkan()
     cleanup_install_executable()

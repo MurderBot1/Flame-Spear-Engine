@@ -22,15 +22,15 @@ DOWNLOAD_LINK_MAC : str = installutil.get_curl_command(f"https://github.com/prem
 
 # Commands to install vulkan
 WINDOWS_INSTALL_COMMANDS : list[str] = [
-    f"move /Y temp\\premake\\premake5.exe {INSTALL_PATH / 'premake5.exe'}"
+    f"move /Y {EXTRACT_PATH_WINDOWS / 'premake5.exe'} {INSTALL_PATH / 'premake5.exe'}"
 ]
 
 LINUX_INSTALL_COMMANDS : list[str] = [
-    f"mv temp/premake/premake5 {INSTALL_PATH / 'premake5'}"
+    f"mv {EXTRACT_PATH_LINUX / 'premake5'} {INSTALL_PATH / 'premake5'}"
 ]
 
 MAC_INSTALL_COMMANDS : list[str] = [
-    f"mv temp/premake/premake5 {INSTALL_PATH / 'premake5'}"
+    f"mv {EXTRACT_PATH_MAC / 'premake5'} {INSTALL_PATH / 'premake5'}"
 ]
 
 # Getter for download command
@@ -49,6 +49,11 @@ def get_download_path() -> Path:
 def get_extract_path() -> Path:
     return installutil.get_path(EXTRACT_PATH_WINDOWS, EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
+# Downloads the premake executable installer and run it
+def download_premake() -> None:
+    os.makedirs(INSTALL_PATH, exist_ok=True)
+    subprocess.run(get_download_command(), shell=True)
+
 # extract downloaded file
 def extract_premake() -> None:
     installutil.extract(get_download_path(), get_extract_path())
@@ -66,8 +71,7 @@ def cleanup_install_executable() -> None:
 
 # Downloads and installs premake
 def download_and_install_premake() -> None:
-    os.makedirs(INSTALL_PATH, exist_ok=True)
-    subprocess.run(get_download_command(), shell=True)
+    download_premake()
     extract_premake()
     install_premake()
     cleanup_install_executable()
