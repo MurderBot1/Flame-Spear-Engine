@@ -19,5 +19,5 @@ jobs:
           clang++ --version
       
       - name: build
-      - run: |
+        run: |
         echo "Building with Clang on Linux..."

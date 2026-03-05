@@ -19,5 +19,5 @@ jobs:
         run: clang-cl --version
       
       - name: build
-      - run: |
+        run: |
         echo "Building with Clang on Windows..."

@@ -19,5 +19,5 @@ jobs:
         run: cl
       
       - name: build
-      - run: |
+        run: |
         echo "Building with MSVC on Windows..."

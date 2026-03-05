@@ -19,5 +19,5 @@ jobs:
           g++ --version
       
       - name: build
-      - run: |
+        run: |
         echo "Building with GCC on Linux..."
