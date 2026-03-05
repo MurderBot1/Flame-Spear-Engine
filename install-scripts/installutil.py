@@ -1,6 +1,7 @@
 import os
 import platform
 from pathlib import Path
+import shutil
 import subprocess
 import zipfile
 import tarfile
@@ -59,14 +60,24 @@ def get_path(DOWNLOAD_PATH_WINDOWS : Path, DOWNLOAD_PATH_LINUX : Path, DOWNLOAD_
 def run_commands(commands : list[str]) -> None:
     for command in commands:
         print(f"Executing : {command}")
-        subprocess.run(command, shell=True)
+        p = subprocess.Popen(command, shell=True)
+        p.wait()
 
 # Takes in a compressed file and then extracts it to a provided location
 def extract(in_path : Path, out_path : Path) -> None:
-    file_type = in_path.split('.', 1)[1] if '.' in in_path else ''
+    str_path = str(in_path)
+    file_type : str = str_path.split('.', 1)[1] if '.' in str_path else ''
     if file_type == "zip":
         zipfile.ZipFile(in_path).extractall(out_path)
     elif file_type == "tar.gz" or file_type == "tar.xz":
         tarfile.TarFile(in_path).extractall(out_path)
     else:
         print(f"{file_type} not supported")
+
+# Deletes the item at provided path
+def delete(path : Path) -> None:
+    if os.path.exists(path):
+        if os.path.isfile(path):
+            os.remove(path)
+        elif os.path.isdir(path):
+            shutil.rmtree(path)

@@ -22,15 +22,15 @@ DOWNLOAD_LINK_MAC : str = installutil.get_curl_command(f"https://github.com/ninj
 
 # Commands to install vulkan
 WINDOWS_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"move /Y temp\\ninja\\ninja.exe {INSTALL_PATH / 'ninja.exe'}"
 ]
 
 LINUX_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"mv temp/ninja/ninja {INSTALL_PATH / 'ninja'}"
 ]
 
 MAC_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"mv temp/ninja/ninja {INSTALL_PATH / 'ninja'}"
 ]
 
 # Getter for download command
@@ -60,10 +60,9 @@ def install_ninja() -> None:
 # Removes the downloaded executable
 def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
-    if os.path.exists(download_path):
-        os.remove(download_path)
-    if installutil.IS_MAC and os.path.exists(EXTRACT_PATH_MAC):
-        os.remove(EXTRACT_PATH_MAC)
+    extract_path : Path = get_extract_path()
+    installutil.delete(download_path)
+    installutil.delete(extract_path)
 
 # Downloads and installs ninja
 def download_and_install_ninja() -> None:

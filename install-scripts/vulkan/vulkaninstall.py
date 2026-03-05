@@ -10,8 +10,8 @@ VERSION = "1.4.341.0"
 DOWNLOAD_PATH_WINDOWS : Path = Path("temp/vulkan.exe")
 DOWNLOAD_PATH_LINUX : Path = Path("temp/vulkan.tar.xz")
 DOWNLOAD_PATH_MAC : Path = Path("temp/vulkan.zip")
-EXTRACT_PATH_LINUX : Path = Path("temp/ ")
-EXTRACT_PATH_MAC : Path = Path("temp/ ")
+EXTRACT_PATH_LINUX : Path = Path("temp/vulkan")
+EXTRACT_PATH_MAC : Path = Path("temp/vulkan")
 INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "Vulkan"
 
 # Download links
@@ -61,12 +61,10 @@ def install_vulkan() -> None:
 # Removes the downloaded executable
 def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
-    if os.path.exists(download_path):
-        os.remove(download_path)
-    if installutil.IS_MAC and os.path.exists(EXTRACT_PATH_MAC):
-        os.remove(EXTRACT_PATH_MAC)
-    if installutil.IS_LINUX and os.path.exists(EXTRACT_PATH_LINUX):
-        os.remove(EXTRACT_PATH_LINUX)
+    extract_path : Path = get_extract_path()
+    installutil.delete(download_path)
+    if not installutil.IS_WINDOWS:
+        installutil.delete(extract_path)
 
 # Downloads the vulkan executable installer and run it
 def download_and_install_vulkan() -> None:

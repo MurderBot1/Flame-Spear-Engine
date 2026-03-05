@@ -10,9 +10,9 @@ VERSION = "5.0.0-beta8"
 DOWNLOAD_PATH_WINDOWS : Path = Path("temp/premake.zip")
 DOWNLOAD_PATH_LINUX : Path = Path("temp/premake.tar.gz")
 DOWNLOAD_PATH_MAC : Path = Path("temp/premake.tar.gz")
-EXTRACT_PATH_WINDOWS : Path = Path("temp/ ")
-EXTRACT_PATH_LINUX : Path = Path("temp/ ")
-EXTRACT_PATH_MAC : Path = Path("temp/ ")
+EXTRACT_PATH_WINDOWS : Path = Path("temp/premake")
+EXTRACT_PATH_LINUX : Path = Path("temp/premake")
+EXTRACT_PATH_MAC : Path = Path("temp/premake")
 INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "Premake"
 
 # Download links
@@ -22,15 +22,15 @@ DOWNLOAD_LINK_MAC : str = installutil.get_curl_command(f"https://github.com/prem
 
 # Commands to install vulkan
 WINDOWS_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"move /Y temp\\premake\\premake5.exe {INSTALL_PATH / 'premake5.exe'}"
 ]
 
 LINUX_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"mv temp/premake/premake5 {INSTALL_PATH / 'premake5'}"
 ]
 
 MAC_INSTALL_COMMANDS : list[str] = [
-    ""
+    f"mv temp/premake/premake5 {INSTALL_PATH / 'premake5'}"
 ]
 
 # Getter for download command
@@ -61,10 +61,8 @@ def install_premake() -> None:
 def cleanup_install_executable() -> None:
     download_path : Path = get_download_path()
     extract_path : Path = get_extract_path()
-    if os.path.exists(download_path):
-        os.remove(download_path)
-    if os.path.exists(extract_path):
-        os.remove(extract_path)
+    installutil.delete(download_path)
+    installutil.delete(extract_path)
 
 # Downloads and installs premake
 def download_and_install_premake() -> None:
