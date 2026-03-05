@@ -3,12 +3,12 @@ To run the windows example run these commands in your terminal as admin from the
 
 **Command prompt**
 ```
-./scripts/setup_all_and_run_window.bat -ProjectPath %CD%/examples/example_project_windows
+./scripts/setup_all_and_run_window.bat -ProjectPath %CD%/examples/example_project
 ```
 
 **Powershell**
 ```
-./scripts/setup_all_and_run_window.bat -ProjectPath ((Get-Location).Path + /examples/example_project_windows)
+./scripts/setup_all_and_run_window.bat -ProjectPath ((Get-Location).Path + /examples/example_project)
 ```
 
 # Mac Example
@@ -16,7 +16,7 @@ To run the mac example run these commands in your terminal as admin from the fla
 
 **Terminal**
 ```
-./scripts/setup_all_and_run_mac.sh -ProjectPath "$(pwd)/examples/example_project_mac"
+./scripts/setup_all_and_run_mac.sh -ProjectPath "$(pwd)/examples/example_project"
 ```
 
 # Linux Example
@@ -24,5 +24,5 @@ To run the linux example run these commands in your terminal as admin from the f
 
 **Terminal**
 ```
-./scripts/setup_all_and_run_linux.sh -ProjectPath "$(pwd)/examples/example_project_linux"
+./scripts/setup_all_and_run_linux.sh -ProjectPath "$(pwd)/examples/example_project"
 ```

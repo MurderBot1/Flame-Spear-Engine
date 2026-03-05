@@ -21,3 +21,4 @@ jobs:
       - name: build
         run: |
           echo "Building with Clang on Windows..."
+          .\scripts\engine\setup_all_and_run_windows.bat

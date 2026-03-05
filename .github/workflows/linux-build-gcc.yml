@@ -21,3 +21,4 @@ jobs:
       - name: build
         run: |
           echo "Building with GCC on Linux..."
+          ./scripts/engine/setup_all_and_run_linux.sh
