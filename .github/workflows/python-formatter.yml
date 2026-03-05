@@ -25,7 +25,7 @@ jobs:
 
       - name: Load directory list and run Black
         run: |
-          DIRS=$(cat formatting/black_format_dirs.txt | tr '\n' ' ')
+          DIRS=$(cat formatting/black-format_dirs.txt | tr '\n' ' ')
           echo "Formatting directories: $DIRS"
           black $DIRS
 
