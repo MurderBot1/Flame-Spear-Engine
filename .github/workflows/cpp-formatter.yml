@@ -16,13 +16,16 @@ jobs:
           fetch-depth: 0
 
       - name: Install clang-format
-        run: sudo apt-get update && sudo apt-get install -y formatting/guides/.clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
 
-      - name: Run clang-format
+      - name: Run clang-format using custom config
         run: |
+          CONFIG_DIR="formatting/guides"
           FILES=$(git ls-files '*.c' '*.cpp' '*.h' '*.hpp')
+
           if [ -n "$FILES" ]; then
-            clang-format -i $FILES
+            echo "Using config at $CONFIG_DIR/.clang-format"
+            clang-format -i -style=file --fallback-style=none $FILES --assume-filename="$CONFIG_DIR/.clang-format"
           fi
 
       - name: Commit changes if any
