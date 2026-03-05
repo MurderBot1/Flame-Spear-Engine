@@ -17,4 +17,4 @@ jobs:
       
       - name: build
       - run: |
-        echo Building with Clang on macOS...
+        echo "Building with Clang on macOS..."

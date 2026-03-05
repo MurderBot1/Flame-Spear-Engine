@@ -19,4 +19,4 @@ jobs:
       
       - name: build
       - run: |
-        echo Building with GCC on Windows...
+        echo "Building with GCC on Windows..."
