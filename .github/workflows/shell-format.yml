@@ -1,0 +1,32 @@
+name: Shell Formatter
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+
+jobs:
+  shfmt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install shfmt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shfmt
+
+      - name: Format all shell scripts
+        run: |
+          echo "Formatting all .sh files"
+          shfmt -w -config formatting/guides/shfmt.conf .
+
+      - name: Commit formatting changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Apply shfmt formatting"
+          branch: ${{ github.head_ref || github.ref_name }}

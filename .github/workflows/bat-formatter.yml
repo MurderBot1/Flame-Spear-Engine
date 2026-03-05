@@ -1,0 +1,31 @@
+name: Batch Formatter
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+
+jobs:
+  batchfmt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Prettier and batch plugin
+        run: |
+          npm install -g prettier prettier-plugin-batch
+
+      - name: Format all .bat files
+        run: |
+          echo "Formatting all .bat files"
+          prettier --config formatting/guides/prettier.config.cjs --write "**/*.bat"
+
+      - name: Commit formatting changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Apply batch file formatting"
+          branch: ${{ github.head_ref || github.ref_name }}
