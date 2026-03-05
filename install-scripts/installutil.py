@@ -36,7 +36,7 @@ def get_download_command(DOWNLOAD_LINK_WINDOWS : str, DOWNLOAD_LINK_LINUX : str,
         return DOWNLOAD_LINK_MAC
 
 # returns the correct string list depending on OS
-def get_install_commands(WINDOWS_INSTALL_COMMANDS : list[str], LINUX_INSTALL_COMMANDS : list[str], MAC_INSTALL_COMMANDS : list[str]) -> list[str]:
+def get_commands(WINDOWS_INSTALL_COMMANDS : list[str], LINUX_INSTALL_COMMANDS : list[str], MAC_INSTALL_COMMANDS : list[str]) -> list[str]:
     if IS_WINDOWS:
         return WINDOWS_INSTALL_COMMANDS
     elif IS_LINUX:
@@ -45,7 +45,7 @@ def get_install_commands(WINDOWS_INSTALL_COMMANDS : list[str], LINUX_INSTALL_COM
         return MAC_INSTALL_COMMANDS
 
 # returns the correct path depending on OS
-def get_download_path(DOWNLOAD_PATH_WINDOWS : Path, DOWNLOAD_PATH_LINUX : Path, DOWNLOAD_PATH_MAC : Path) -> Path:
+def get_path(DOWNLOAD_PATH_WINDOWS : Path, DOWNLOAD_PATH_LINUX : Path, DOWNLOAD_PATH_MAC : Path) -> Path:
     if IS_WINDOWS:
         return DOWNLOAD_PATH_WINDOWS
     elif IS_LINUX:

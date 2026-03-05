@@ -39,11 +39,15 @@ def get_download_command() -> str:
 
 # Getter for install commands
 def get_install_commands() -> list[str]:
-    return installutil.get_install_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
+    return installutil.get_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
 
 # Getter for download path
 def get_download_path() -> Path:
-    return installutil.get_download_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
+    return installutil.get_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
+
+# Getter for extraction path
+def get_extract_path() -> Path:
+    return installutil.get_path(EXTRACT_PATH_WINDOWS, EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
 # Run the executable downloaded and other setup items
 def install_premake():
@@ -52,10 +56,11 @@ def install_premake():
 # Removes the downloaded executable
 def cleanup_install_executable():
     download_path : Path = get_download_path()
+    extract_path : Path = get_extract_path()
     if os.path.exists(download_path):
         os.remove(download_path)
-    if installutil.IS_MAC and os.path.exists(EXTRACT_PATH_MAC):
-        os.remove(EXTRACT_PATH_MAC)
+    if os.path.exists(extract_path):
+        os.remove(extract_path)
 
 # Downloads and installs premake
 def download_and_install_premake():

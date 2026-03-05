@@ -10,9 +10,9 @@ VERSION = "1.13.2"
 DOWNLOAD_PATH_WINDOWS : Path = Path("temp/ninja.zip")
 DOWNLOAD_PATH_LINUX : Path = Path("temp/ninja.zip")
 DOWNLOAD_PATH_MAC : Path = Path("temp/ninja.zip")
-EXTRACT_PATH_WINDOWS : Path = Path("temp/ ")
-EXTRACT_PATH_LINUX : Path = Path("temp/ ")
-EXTRACT_PATH_MAC : Path = Path("temp/ ")
+EXTRACT_PATH_WINDOWS : Path = Path("temp/ninja")
+EXTRACT_PATH_LINUX : Path = Path("temp/ninja")
+EXTRACT_PATH_MAC : Path = Path("temp/ninja")
 INSTALL_PATH : Path = installutil.ROOT / "FlameSpearEngine_SDKs" / "Ninja"
 
 # Download links
@@ -39,11 +39,15 @@ def get_download_command() -> str:
 
 # Getter for install commands
 def get_install_commands() -> list[str]:
-    return installutil.get_install_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
+    return installutil.get_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
 
 # Getter for download path
 def get_download_path() -> Path:
-    return installutil.get_download_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
+    return installutil.get_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
+
+# Getter for extraction path
+def get_extract_path() -> Path:
+    return installutil.get_path(EXTRACT_PATH_WINDOWS, EXTRACT_PATH_LINUX, EXTRACT_PATH_MAC)
 
 # Run the executable downloaded and other setup items
 def install_ninja():

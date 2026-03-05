@@ -38,11 +38,11 @@ def get_download_command() -> str:
 
 # Getter for install commands
 def get_install_commands() -> list[str]:
-    return installutil.get_install_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
+    return installutil.get_commands(WINDOWS_INSTALL_COMMANDS, LINUX_INSTALL_COMMANDS, MAC_INSTALL_COMMANDS)
 
 # Getter for download path
 def get_download_path() -> Path:
-    return installutil.get_download_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
+    return installutil.get_path(DOWNLOAD_PATH_WINDOWS, DOWNLOAD_PATH_LINUX, DOWNLOAD_PATH_MAC)
 
 # Run the executable downloaded and other setup items
 def install_vulkan():
@@ -55,6 +55,8 @@ def cleanup_install_executable():
         os.remove(download_path)
     if installutil.IS_MAC and os.path.exists(EXTRACT_PATH_MAC):
         os.remove(EXTRACT_PATH_MAC)
+    if installutil.IS_LINUX and os.path.exists(EXTRACT_PATH_LINUX):
+        os.remove(EXTRACT_PATH_LINUX)
 
 # Downloads the vulkan executable installer and run it
 def download_and_install_vulkan() -> None:
