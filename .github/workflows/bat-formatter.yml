@@ -15,14 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Prettier and batch plugin
+      - name: Install Prettier
         run: |
-          npm install -g prettier prettier-plugin-batch
+          npm install -g prettier
 
-      - name: Format all .bat files
+      - name: Format all .bat files (no-op)
         run: |
-          echo "Formatting all .bat files"
-          prettier --config formatting/guides/prettier.config.cjs --write "**/*.bat"
+          echo "No Prettier plugin exists for .bat files, skipping formatting."
 
       - name: Commit formatting changes
         uses: stefanzweifel/git-auto-commit-action@v5
