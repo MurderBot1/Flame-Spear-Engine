@@ -24,10 +24,13 @@ jobs:
       - name: Format all shell scripts
         run: |
           echo "Formatting all .sh files"
-          shfmt -w -config formatting/guides/shfmt.conf .
+          # If you want custom settings, put flags here:
+          # Example: shfmt -w -i 2 -bn -ci .
+          shfmt -w .
 
       - name: Commit formatting changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Apply shfmt formatting"
-          branch: ${{ github.head_ref || github.ref_name }}
+          # Use the correct branch depending on event type
+          branch: ${{ github.event.pull_request.head.ref || github.ref_name }}
