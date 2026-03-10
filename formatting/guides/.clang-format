@@ -16,3 +16,6 @@ BreakBeforeBraces: Attach
 
 SortIncludes: true
 IncludeBlocks: Regroup
+
+NamespaceIndentation: All
+IndentAccessModifiers: false
