@@ -16,19 +16,22 @@ jobs:
           fetch-depth: 0
 
       - name: Install clang-format
-        run: sudo apt-get update && sudo apt-get install -y clang-format
-
-      - name: Run clang-format using custom config
         run: |
-          CONFIG_DIR="formatting/guides"
-          FILES=$(git ls-files '*.c' '*.cpp' '*.h' '*.hpp')
+          sudo apt-get update
+          sudo apt-get install -y clang-format
 
+      - name: Copy clang-format config to repo root
+        run: cp formatting/guides/.clang-format .
+
+      - name: Run clang-format
+        run: |
+          FILES=$(git ls-files '*.c' '*.cpp' '*.h' '*.hpp' | tr '\n' ' ')
           if [ -n "$FILES" ]; then
-            echo "Using config at $CONFIG_DIR/.clang-format"
-            clang-format -i -style=file --fallback-style=none $FILES --assume-filename="$CONFIG_DIR/.clang-format"
+            clang-format -i -style=file $FILES
           fi
 
       - name: Commit changes if any
+        if: github.actor != 'github-actions[bot]'
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions"
