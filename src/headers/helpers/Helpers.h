@@ -17,8 +17,8 @@ struct ConstantScreenSize {
         return x * y;
     }
 
-  private:
-    const int x, y;
+    private:
+        const int x, y;
 };
 
 struct ScreenSize {
