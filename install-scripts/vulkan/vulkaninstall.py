@@ -3,6 +3,12 @@ import installutil
 import subprocess
 from pathlib import Path
 
+# Documentation
+# https://vulkan.lunarg.com/doc/sdk/1.4.341.1/windows/getting_started.html
+# https://vulkan.lunarg.com/doc/sdk/1.4.341.1/linux/getting_started.html
+# https://vulkan.lunarg.com/doc/sdk/1.4.341.1/mac/getting_started.html
+# https://vulkan.lunarg.com/sdk/home
+
 # Vulkan version to install
 VERSION = "1.4.341.0"
 

@@ -3,6 +3,9 @@ from pathlib import Path
 import os
 import subprocess
 
+# Documentation
+# https://github.com/ninja-build/ninja/releases
+
 # ninja version to install
 VERSION = "1.13.2"
 

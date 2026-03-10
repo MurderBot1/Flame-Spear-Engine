@@ -3,6 +3,9 @@ from pathlib import Path
 import os
 import subprocess
 
+# Documentation
+# https://github.com/ninja-build/ninja/releases
+
 # Premake version to install
 VERSION = "5.0.0-beta8"
 
