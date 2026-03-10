@@ -6,10 +6,10 @@
 #include <vector>
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSController {
-class BaseControllerManager {
-  private:
-    std::vector<Controller> devices;
-};
+    class BaseControllerManager {
+      private:
+        std::vector<Controller> devices;
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSController
 
 #endif

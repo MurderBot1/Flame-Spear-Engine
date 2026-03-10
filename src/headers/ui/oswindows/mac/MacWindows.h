@@ -6,18 +6,18 @@
 #include "ui/oswindows/OSWindows.h"
 
 namespace FSE::UI::OSWindows {
-class MacWindow : public BaseWindow {
-  public: // Constructor
-    MacWindow();
+    class MacWindow : public BaseWindow {
+      public: // Constructor
+        MacWindow();
 
-  public:
-    void updateBufferSize() override;
-    void setPixel(int rgba, int index) override;
-    void setPixels(std::vector<int> newPixels) override;
-    void display() override;
+      public:
+        void updateBufferSize() override;
+        void setPixel(int rgba, int index) override;
+        void setPixels(std::vector<int> newPixels) override;
+        void display() override;
 
-  private:
-};
+      private:
+    };
 } // namespace FSE::UI::OSWindows
 
 #endif

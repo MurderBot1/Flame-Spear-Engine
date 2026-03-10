@@ -5,12 +5,12 @@
 #include "types/vectors/Vector2.h"
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSMouse {
-class BaseMouse {
-  public:
-    virtual bool getInput(BooleanMouseInputs input) = 0;
-    virtual float getInput(FloatMouseInputs input) = 0;
-    virtual Types::Vectors::Vector2 getInput(VectorMouseInputs input) = 0;
-};
+    class BaseMouse {
+      public:
+        virtual bool getInput(BooleanMouseInputs input) = 0;
+        virtual float getInput(FloatMouseInputs input) = 0;
+        virtual Types::Vectors::Vector2 getInput(VectorMouseInputs input) = 0;
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSMouse
 
 #endif

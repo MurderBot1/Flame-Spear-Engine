@@ -2,21 +2,21 @@
 #define JoystickInputs_H
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-enum BooleanJoystickInputs {
+    enum BooleanJoystickInputs {
 
-};
+    };
 
-enum FloatJoystickInputs {
+    enum FloatJoystickInputs {
 
-};
+    };
 
-enum VectorJoystickInputs {
+    enum VectorJoystickInputs {
 
-};
+    };
 
-int GetOSKeyCodeFromInput(BooleanJoystickInputs input);
-int GetOSKeyCodeFromInput(FloatJoystickInputs input);
-int GetOSKeyCodeFromInput(VectorJoystickInputs input);
+    int GetOSKeyCodeFromInput(BooleanJoystickInputs input);
+    int GetOSKeyCodeFromInput(FloatJoystickInputs input);
+    int GetOSKeyCodeFromInput(VectorJoystickInputs input);
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

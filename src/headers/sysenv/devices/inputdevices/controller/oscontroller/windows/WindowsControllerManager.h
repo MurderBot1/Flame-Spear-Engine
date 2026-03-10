@@ -2,7 +2,7 @@
 #define WindowsControllerManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSController {
-class WindowsControllerManager {};
+    class WindowsControllerManager {};
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSController
 
 #endif

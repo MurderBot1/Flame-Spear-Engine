@@ -2,7 +2,7 @@
 #define UDP_H
 
 namespace FSE::Networking::UDP {
-class UDPSender {};
+    class UDPSender {};
 } // namespace FSE::Networking::UDP
 
 #endif

@@ -2,7 +2,7 @@
 #define LinuxSpeakerManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker {
-class LinuxSpeakerManager {};
+    class LinuxSpeakerManager {};
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker
 
 #endif

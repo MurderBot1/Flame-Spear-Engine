@@ -1,9 +1,9 @@
 #ifndef FileUtil_H
 #define FileUtil_H
 
+#include <cstdarg>
 #include <expected>
 #include <filesystem>
-#include <cstdarg>
 
 namespace FSE::Util::Files::FileUtil {
     enum FileReadErrors {
@@ -21,6 +21,6 @@ namespace FSE::Util::Files::FileUtil {
     enum FileDeletionErrors {
 
     };
-}
+} // namespace FSE::Util::Files::FileUtil
 
 #endif

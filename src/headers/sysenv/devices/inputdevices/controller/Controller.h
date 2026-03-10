@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class Controller
+    class Controller
 #if defined(_WIN32) || defined(_WIN64)
-    : OSController::WindowsController
+        : OSController::WindowsController
 #elif defined(__linux__)
-    : OSController::LinuxController
+        : OSController::LinuxController
 #elif defined(__APPLE__)
-    : OSController::MacController
+        : OSController::MacController
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

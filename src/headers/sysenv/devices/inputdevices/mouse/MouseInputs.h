@@ -2,21 +2,21 @@
 #define MouseInputs_H
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-enum BooleanMouseInputs {
+    enum BooleanMouseInputs {
 
-};
+    };
 
-enum FloatMouseInputs {
+    enum FloatMouseInputs {
 
-};
+    };
 
-enum VectorMouseInputs {
+    enum VectorMouseInputs {
 
-};
+    };
 
-int GetOSKeyCodeFromInput(BooleanMouseInputs input);
-int GetOSKeyCodeFromInput(FloatMouseInputs input);
-int GetOSKeyCodeFromInput(VectorMouseInputs input);
+    int GetOSKeyCodeFromInput(BooleanMouseInputs input);
+    int GetOSKeyCodeFromInput(FloatMouseInputs input);
+    int GetOSKeyCodeFromInput(VectorMouseInputs input);
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

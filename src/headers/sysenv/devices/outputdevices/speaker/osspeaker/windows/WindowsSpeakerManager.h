@@ -2,7 +2,7 @@
 #define WindowsSpeakerManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker {
-class WindowsSpeakerManager {};
+    class WindowsSpeakerManager {};
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker
 
 #endif

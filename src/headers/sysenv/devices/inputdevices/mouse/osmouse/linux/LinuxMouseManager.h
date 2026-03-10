@@ -2,7 +2,7 @@
 #define LinuxMouseManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSMouse {
-class LinuxMouseManager {};
+    class LinuxMouseManager {};
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSMouse
 
 #endif

@@ -1,5 +1,3 @@
 #include "util/files/FileUtil.h"
 
-namespace FSE::Util::Files::FileUtil {
-
-}
+namespace FSE::Util::Files::FileUtil {}

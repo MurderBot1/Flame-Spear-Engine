@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class Speaker
+    class Speaker
 #if defined(_WIN32) || defined(_WIN64)
-    : OSSpeaker::WindowsSpeakerManager
+        : OSSpeaker::WindowsSpeakerManager
 #elif defined(__linux__)
-    : OSSpeaker::LinuxSpeakerManager
+        : OSSpeaker::LinuxSpeakerManager
 #elif defined(__APPLE__)
-    : OSSpeaker::MacSpeakerManager
+        : OSSpeaker::MacSpeakerManager
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

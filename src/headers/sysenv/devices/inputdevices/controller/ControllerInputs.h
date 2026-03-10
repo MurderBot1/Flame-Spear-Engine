@@ -2,21 +2,21 @@
 #define ControllerInputs_H
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-enum BooleanControllerInputs {
+    enum BooleanControllerInputs {
 
-};
+    };
 
-enum FloatControllerInputs {
+    enum FloatControllerInputs {
 
-};
+    };
 
-enum VectorControllerInputs {
+    enum VectorControllerInputs {
 
-};
+    };
 
-int GetOSKeyCodeFromInput(BooleanControllerInputs input);
-int GetOSKeyCodeFromInput(FloatControllerInputs input);
-int GetOSKeyCodeFromInput(VectorControllerInputs input);
+    int GetOSKeyCodeFromInput(BooleanControllerInputs input);
+    int GetOSKeyCodeFromInput(FloatControllerInputs input);
+    int GetOSKeyCodeFromInput(VectorControllerInputs input);
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

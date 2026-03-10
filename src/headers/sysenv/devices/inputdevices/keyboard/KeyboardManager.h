@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class KeyboardManager
+    class KeyboardManager
 #if defined(_WIN32) || defined(_WIN64)
-    : OSKeyboard::WindowsKeyboardManager
+        : OSKeyboard::WindowsKeyboardManager
 #elif defined(__linux__)
-    : OSKeyboard::LinuxKeyboardManager
+        : OSKeyboard::LinuxKeyboardManager
 #elif defined(__APPLE__)
-    : OSKeyboard::MacKeyboardManager
+        : OSKeyboard::MacKeyboardManager
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

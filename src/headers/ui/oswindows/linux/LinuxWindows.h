@@ -6,18 +6,18 @@
 #include "ui/oswindows/OSWindows.h"
 
 namespace FSE::UI::OSWindows {
-class LinuxWindow : public BaseWindow {
-  public: // Constructor
-    LinuxWindow();
+    class LinuxWindow : public BaseWindow {
+      public: // Constructor
+        LinuxWindow();
 
-  public:
-    void updateBufferSize() override;
-    void setPixel(int rgba, int index) override;
-    void setPixels(std::vector<int> newPixels) override;
-    void display() override;
+      public:
+        void updateBufferSize() override;
+        void setPixel(int rgba, int index) override;
+        void setPixels(std::vector<int> newPixels) override;
+        void display() override;
 
-  private:
-};
+      private:
+    };
 } // namespace FSE::UI::OSWindows
 
 #endif

@@ -2,13 +2,13 @@
 #define IOManager_H
 
 namespace FSE::IO {
-class IOManager {
-  public:
-    IOManager();
-    ~IOManager();
+    class IOManager {
+      public:
+        IOManager();
+        ~IOManager();
 
-  private:
-};
+      private:
+    };
 } // namespace FSE::IO
 
 #endif

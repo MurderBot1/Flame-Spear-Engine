@@ -5,12 +5,12 @@
 #include "types/vectors/Vector2.h"
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSController {
-class BaseController {
-  public:
-    virtual bool getInput(BooleanControllerInputs input) = 0;
-    virtual float getInput(FloatControllerInputs input) = 0;
-    virtual Types::Vectors::Vector2 getInput(VectorControllerInputs input) = 0;
-};
+    class BaseController {
+      public:
+        virtual bool getInput(BooleanControllerInputs input) = 0;
+        virtual float getInput(FloatControllerInputs input) = 0;
+        virtual Types::Vectors::Vector2 getInput(VectorControllerInputs input) = 0;
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSController
 
 #endif

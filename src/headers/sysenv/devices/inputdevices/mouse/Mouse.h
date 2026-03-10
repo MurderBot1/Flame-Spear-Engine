@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class Mouse
+    class Mouse
 #if defined(_WIN32) || defined(_WIN64)
-    : OSMouse::WindowsMouse
+        : OSMouse::WindowsMouse
 #elif defined(__linux__)
-    : OSMouse::LinuxMouse
+        : OSMouse::LinuxMouse
 #elif defined(__APPLE__)
-    : OSMouse::MacMouse
+        : OSMouse::MacMouse
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

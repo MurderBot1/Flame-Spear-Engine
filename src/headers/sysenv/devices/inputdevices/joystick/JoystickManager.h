@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class JoystickManager
+    class JoystickManager
 #if defined(_WIN32) || defined(_WIN64)
-    : OSJoystick::WindowsJoystickManager
+        : OSJoystick::WindowsJoystickManager
 #elif defined(__linux__)
-    : OSJoystick::LinuxJoystickManager
+        : OSJoystick::LinuxJoystickManager
 #elif defined(__APPLE__)
-    : OSJoystick::MacJoystickManager
+        : OSJoystick::MacJoystickManager
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

@@ -10,17 +10,17 @@
 #endif
 
 namespace FSE::UI {
-class Window
+    class Window
 #if defined(_WIN32) || defined(_WIN64)
-    : public OSWindows::WindowsWindow {
+        : public OSWindows::WindowsWindow {
 #elif defined(__linux__)
-    : public OSWindows::LinuxWindow {
+        : public OSWindows::LinuxWindow {
 #elif defined(__APPLE__)
-    : public OSWindows::MacWindow {
+        : public OSWindows::MacWindow {
 #endif
-  public: // Constructor
-    Window();
-};
+      public: // Constructor
+        Window();
+    };
 
 } // namespace FSE::UI
 

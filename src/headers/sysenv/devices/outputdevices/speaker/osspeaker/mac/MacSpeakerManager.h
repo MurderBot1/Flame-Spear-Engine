@@ -2,7 +2,7 @@
 #define MacSpeakerManager_H
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker {
-class MacSpeakerManager {};
+    class MacSpeakerManager {};
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSSpeaker
 
 #endif

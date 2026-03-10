@@ -10,16 +10,16 @@
 #endif
 
 namespace FSE::System::Devices::Input::DeviceClasses {
-class Keyboard
+    class Keyboard
 #if defined(_WIN32) || defined(_WIN64)
-    : OSKeyboard::WindowsKeyboard
+        : OSKeyboard::WindowsKeyboard
 #elif defined(__linux__)
-    : OSKeyboard::LinuxKeyboard
+        : OSKeyboard::LinuxKeyboard
 #elif defined(__APPLE__)
-    : OSKeyboard::MacKeyboard
+        : OSKeyboard::MacKeyboard
 #endif
-{
-};
+    {
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses
 
 #endif

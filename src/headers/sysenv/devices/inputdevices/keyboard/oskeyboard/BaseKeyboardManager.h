@@ -6,13 +6,13 @@
 #include <vector>
 
 namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard {
-class BaseKeyboardManager {
-  public:
-    virtual void update() = 0;
+    class BaseKeyboardManager {
+      public:
+        virtual void update() = 0;
 
-  private:
-    std::vector<Keyboard> devices;
-};
+      private:
+        std::vector<Keyboard> devices;
+    };
 } // namespace FSE::System::Devices::Input::DeviceClasses::OSKeyboard
 
 #endif
